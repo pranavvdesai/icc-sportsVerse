@@ -1,0 +1,95 @@
+/* Style the accordion section */
+.accordion__section {
+    display: flex;
+    flex-direction: column;
+    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+    border: 10px;
+    border-radius: 16px;
+    /* @apply xxs:px-4 xs:px-8 sm:px-12 md:px-12 lg:px-12 xl:px-12 xf:px-12 xxl:px-12 mb-6 w-full; */
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    border-radius: 16px;
+    background: #262B2F;
+    cursor: pointer;
+    border-top: 0.5px solid rgba(227, 198, 240, 0.1);
+    border-bottom: 0.5px solid rgba(227, 198, 240, 0.1);
+    border-left: 0.5px solid rgba(227, 198, 240, 0.1);
+    border-right: 0.5px solid rgba(227, 198, 240, 0.1);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-active {
+    border-radius: 16px 16px 0 0;
+    background: #262B2F;
+    border-top: 0.5px solid rgba(227, 198, 240, 0.1);
+    border-bottom: 0.5px solid rgba(227, 198, 240, 0.1);
+    border-left: 0.5px solid rgba(227, 198, 240, 0.1);
+    border-right: 0.5px solid rgba(227, 198, 240, 0.1);
+    cursor: pointer;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Style the accordion content title */
+.accordion__title {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 1.92px;
+    text-align: left;
+    color: #ffffff;
+}
+
+/* Style the accordion chevron icon */
+.accordion__icon {
+    transition: transform 0.3s ease;
+    transform: rotate(90deg);
+    width: 18px;
+}
+
+/* Style to rotate icon when state is active */
+.rotate {
+    transform: rotate(-90deg);
+}
+
+.active {
+    transition: transform 0.3s ease;
+    transform: rotate(90deg);
+}
+
+/* Style the accordion content panel. Note: hidden by default */
+.accordion__content {
+    overflow: auto;
+    background: #262B2F;
+    transition: max-height 0.3s ease;
+    border-radius: 0px 0px 12px 12px !important;
+}
+
+.displayBorder {
+    background-color: #262B2F;
+    overflow: auto;
+    transition: max-height 0.3s ease;
+    border-radius: 0px 0px 12px 12px !important;
+
+}
+
+.accordion__content::-webkit-scrollbar {
+    display: none;
+}
+
+/* Style the accordion content text */
+.accordion__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 1.92px;
+    padding: 16px 16px 16px 16px;
+    color: #ffffff;
+}
