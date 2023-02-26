@@ -23,6 +23,11 @@ function TopNav() {
                         className="hidden md:inline-flex bg-transparent text-white text-lg px-5 py-2 border border-white-500 rounded-xl">
                         Profile
                     </button>
+                    <button
+                        onClick={() => Router.push('/store')}
+                        className="hidden md:inline-flex bg-transparent text-white text-lg px-5 py-2 border border-white-500 rounded-xl">
+                        Store
+                    </button>
 
                 </div >
             </header >

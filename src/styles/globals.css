@@ -52,6 +52,9 @@ a > p {
   .custom-gray {
     @apply bg-[#262B2F];
   }
+  .text-custom-gray {
+    color: #9a9999;
+  }
 }
 
 ::-webkit-scrollbar {
