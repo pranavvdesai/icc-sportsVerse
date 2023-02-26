@@ -1,57 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html,
 body {
-    padding: 0;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    background-color: #202225;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #202225;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 a,
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 button:disabled {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 h1,
 p,
 h2 {
-    cursor: default
+  cursor: default;
 }
 
-a>p {
-    cursor: pointer
+a > p {
+  cursor: pointer;
 }
 
 @layer components {
-    .text-custom-white {
-        color: #E5E8EB;
-    }
+  .text-custom-white {
+    color: #e5e8eb;
+  }
 
-    .text-custom-blue1 {
-        color: #206FBF;
-    }
+  .text-custom-blue1 {
+    color: #206fbf;
+  }
 
-    .custom-gray {
-        @apply bg-[#262B2F];
-    }
-
-   
+  .custom-gray {
+    @apply bg-[#262B2F];
+  }
 }
