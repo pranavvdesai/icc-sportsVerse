@@ -3,11 +3,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 
-const MatchCard = ({ item }) => {
+const MatchCard = ({ matchId, item }) => {
     // console.log(item)
     // convert the date to a readable format
     const date = new Date(item.date).toDateString();
-    const id = 1234;
+    // const id = 1234;
     return (
         <div className="flex py-3 pr-5 border-2 border-slate-700 rounded-xl m-5">
             {/* Just for image div-LHS */}
@@ -60,7 +60,7 @@ const MatchCard = ({ item }) => {
                 <div className="flex justify-between items-end mt-8">
                     {/* Buttons to edit project and view project */}
                     <div className="flex space-x-4 items-center justify-end text-gray-500">
-                        <Link href={`/matches/${id}`}>
+                        <Link href={`/matches/${matchId}`}>
                             <button className="hidden md:inline-flex bg-transparent text-white text-lg px-5 py-2 border border-white-500 rounded-xl
                             hover:bg-white hover:text-black
                             ">Buy Tickets</button>

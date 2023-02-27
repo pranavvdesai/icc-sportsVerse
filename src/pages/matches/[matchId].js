@@ -10,11 +10,13 @@ import DetailMatchCard from "../../components/DetailMatchCard";
 
 const Ticket = () => {
     const router = useRouter()
-    // const { id } = router.query
+    const { matchId } = router.query
     return (
         <div className="flex justify-center align-center mt-8">
             <div className="w-5/12">
-                <DetailMatchCard />
+                <DetailMatchCard
+                    matchId={matchId}
+                />
             </div>
             <div className="w-5/12">
                 <BronzeCard />
