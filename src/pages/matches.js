@@ -5,15 +5,19 @@ import MatchCard from '../components/MatchCard'
 const matches = ({
     data
 }) => {
-    console.log(data[0])
+    console.log(data)
     return (
         <>
             <TopNav />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10 text-custom-white mx-10">
                 {
-                    data.map((item) => {
+                    data.map((match) => {
                         return (
-                            <MatchCard item={item} />
+                            <MatchCard
+                                key={match.id}
+                                item={match}
+                                matchId={match.id}
+                            />
                         )
                     })
                 }

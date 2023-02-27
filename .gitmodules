@@ -1,3 +1,6 @@
 [submodule "ICC_NextIn_Backend"]
 	path = ICC_NextIn_Backend
 	url = https://github.com/SwarupKharul/ICC_NextIn_Backend.git
+[submodule "icc-blockchain"]
+	path = icc-blockchain
+	url = https://github.com/SwarupKharul/icc-blockchain

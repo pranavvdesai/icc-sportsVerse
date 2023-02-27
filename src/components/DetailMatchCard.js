@@ -1,17 +1,27 @@
-import React, { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React, { useState, useEffect } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import axios from 'axios'
 
-const DetailMatchCard = () => {
-  const [noOfTickets, setNoOfTickets] = useState(0);
-  const [tier, setTier] = useState("");
-  const [price, setPrice] = useState(0);
 
-  const viewTicket = () => {
-    console.log("View Ticket");
 
-    console.log(price);
-  };
+
+const DetailMatchCard = ({ matchId }) => {
+    const [noOfTickets, setNoOfTickets] = useState(0)
+    const [tier, setTier] = useState('')
+    const [match, setMatch] = useState({})
+    // const router = useRouter()
+    useEffect(() => {
+        async function getMatch() {
+            const res = await axios.get(`https://iccbackend.up.railway.app/matches/${matchId}`)
+            console.log(res.data)
+            setMatch(res.data)
+
+        }
+        getMatch()
+    }, [])
+    
+    console.log(match)
 
   const handleSubmitTicket = () => {
     let price_now;
@@ -25,7 +35,8 @@ const DetailMatchCard = () => {
     console.log("Submit Ticket");
     console.log(noOfTickets);
     console.log(tier);
-    console.log(price);
+      
+
     window.location.href = `https://iccbackend.up.railway.app/razorpay/pay?amount=${
       price_now * 100
     }&user=1&tickets=${noOfTickets}&tier=${tier}`;
@@ -36,40 +47,32 @@ const DetailMatchCard = () => {
       <div className="py-3 pr-5 border-2 border-slate-700 rounded-xl m-5 custom-gray">
         <div className="flex flex-col justify-between flex-grow pl-5">
           <div className="flex justify-between">
-            <h4 className="text-xl font-bold text-white">
-              MA Chidambaram Stadium, Chennai
-            </h4>
+            <h4 className="text-xl font-bold text-white">{match.venue}</h4>
           </div>
           <div className="border-b w-full pt-2" />
           {/* Team div */}
           <div className="flex mt-6">
             <div className="flex flex-grow flex-col mt-3 px-5">
-              <Image
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_India.png/2560px-Flag_of_India.png"
-                width={70}
-                height={70}
-              />
-              <h1 className="text-2xl text-white font-semibold mt-3">India</h1>
+              <Image src={match.home_team_logo} width={70} height={70} />
+              <h1 className="text-2xl text-white font-semibold mt-3">
+                {match.home_team}
+              </h1>
             </div>
             {/* Put a div to write vs here */}
             <div className="flex flex-grow flex-col mt-3">
               <h1 className="text-2xl text-white font-semibold mt-3">vs</h1>
               <h1 className="text-xl -mx-2 text-white font-semibold mt-8">
-                Final
+                {match.title}
               </h1>
               <h1 className="text-xl -mx-8 text-gray-400 font-semibold mt-5">
-                7:30 PM IST
+                {match.time} IST
               </h1>
             </div>
 
             <div className="flex flex-col mt-3 px-5">
-              <Image
-                src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Flag_of_Australia.svg/1280px-Flag_of_Australia.svg.png"
-                width={70}
-                height={70}
-              />
+              <Image src={match.away_team_logo} width={70} height={70} />
               <h1 className="text-2xl text-white font-semibold mt-3">
-                Australia
+                {match.away_team}
               </h1>
             </div>
           </div>
