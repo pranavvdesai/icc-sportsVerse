@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       fontFamily: {
         Poppins: ["Poppins", "sans-serif"],
+        Karla: ["Karla", "sans-serif"],
       },
     },
   },

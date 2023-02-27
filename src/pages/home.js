@@ -3,6 +3,7 @@ import TopNav from "../components/TopNav";
 import Image from "next/image";
 import Exploreicc from "../components/Exploreicc";
 import ParticipateContests from "../components/ParticipateContests";
+import HomeAvatar from "../components/HomeAvatar";
 
 export default function home() {
   return (
@@ -29,6 +30,8 @@ export default function home() {
             </button>
           </div>
         </div>
+
+           <HomeAvatar />   
         <h1 className="text-2xl font-Poppins text-custom-white mt-10">
           Latest Trending
         </h1>
@@ -38,14 +41,14 @@ export default function home() {
           <div className="relative hover:backdrop-blur-xl cursor-pointer ">
             <div className="relative h-full w-full hover:opacity-70">
               <Image
-                src="https://www.zerowicket.com/wp-content/uploads/2015/11/497335744.jpg"
+                src="/img2.jpg"
                 layout="fill"
                 objectFit="cover"
                 className="rounded-md "
                 alt="profile"
               />
             </div>
-            <div className="absolute bottom-0 ml-10">
+            <div className="absolute bottom-0 mx-10">
               <div className="flex flex-row mb-2">
                 <div className="relative h-10 w-10 rounded-full">
                   <Image
@@ -74,7 +77,7 @@ export default function home() {
               <div className="relative">
                 <div className="relative h-full w-full">
                   <Image
-                    src="https://www.zerowicket.com/wp-content/uploads/2015/11/497335744.jpg"
+                    src="/img3.jpg"
                     layout="fill"
                     objectFit="cover"
                     className="rounded-md "
@@ -82,11 +85,11 @@ export default function home() {
                   />
                 </div>
 
-                <div className="absolute bottom-0 px-2 py-4 backdrop-blur-md">
+                <div className="absolute bottom-0 px-2 py-4 backdrop-blur-lg bg-black/40  w-full">
                   <div className=" mb-2 flex flex-row items-center">
                     <div className="relative h-8 w-8">
                       <Image
-                        src="/icctvlogo.png"
+                        src="/wt20wc.svg"
                         layout="fill"
                         objectFit="cover"
                         className="rounded-full "
@@ -94,7 +97,7 @@ export default function home() {
                       />
                     </div>
                     <p className="ml-2 text-custom-white font-Poppins">
-                      Icc Mens World Cup
+                      Icc Womens World Cup
                     </p>
                   </div>
                   <p className="text-white text-base pb-2">
@@ -105,7 +108,7 @@ export default function home() {
               <div className="relative">
                 <div className="relative h-full w-full">
                   <Image
-                    src="https://www.zerowicket.com/wp-content/uploads/2015/11/497335744.jpg"
+                    src="/img1.jpg"
                     layout="fill"
                     objectFit="cover"
                     className="rounded-md "
@@ -113,7 +116,7 @@ export default function home() {
                   />
                 </div>
 
-                <div className="absolute bottom-0 px-2 py-4 backdrop-blur-md">
+                <div className="absolute bottom-0 px-2 py-4 backdrop-blur-lg bg-black/40  w-full">
                   <div className=" mb-2 flex flex-row items-center">
                     <div className="relative h-8 w-8">
                       <Image
@@ -151,7 +154,7 @@ export default function home() {
                   />
                 </div>
 
-                <div className="absolute bottom-0 px-2 py-4 backdrop-blur-md">
+                <div className="absolute bottom-0 px-2 py-4 backdrop-blur-lg bg-black/40  w-full">
                   <div className=" mb-2 flex flex-row items-center">
                     <div className="relative h-8 w-8">
                       <Image
@@ -174,7 +177,7 @@ export default function home() {
               <div className="relative">
                 <div className="relative h-72 w-full">
                   <Image
-                    src="https://www.zerowicket.com/wp-content/uploads/2015/11/497335744.jpg"
+                    src="/img4.jpeg"
                     layout="fill"
                     objectFit="cover"
                     className="rounded-md "
@@ -182,11 +185,11 @@ export default function home() {
                   />
                 </div>
 
-                <div className="absolute bottom-0 px-2 py-4 backdrop-blur-md">
+                <div className="absolute bottom-0 px-2 py-4 backdrop-blur-lg bg-black/40  w-full">
                   <div className=" mb-2 flex flex-row items-center">
                     <div className="relative h-8 w-8">
                       <Image
-                        src="/icctvlogo.png"
+                        src="/crictoslogo.png"
                         layout="fill"
                         objectFit="cover"
                         className="rounded-full "
@@ -194,11 +197,11 @@ export default function home() {
                       />
                     </div>
                     <p className="ml-2 text-custom-white font-Poppins">
-                      Icc Mens World Cup
+                      Crictos
                     </p>
                   </div>
                   <p className="text-white text-base pb-2">
-                    Kohli gets Mom award for 5th time.
+                    Rohit sharma launches an NFT collection.
                   </p>
                 </div>
               </div>
