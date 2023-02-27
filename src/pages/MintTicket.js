@@ -3,19 +3,27 @@ import ICC from "../../src/blockchain/artifacts/contracts/ICC.sol/ICC.json";
 import { ethers } from "ethers";
 import { useRouter } from "next/router";
 import { contractAddress } from "../../src/blockchain/config";
-import { rpcURLnetwork, authArcana } from "@/utils/authArcana";
+import { rpcURLnetwork, authArcana } from "../utils/authArcana";
+import { useAuth } from "@arcana/auth-react";
 
 export default function MintTicket() {
+  const router = useRouter();
+  console.log(router.asPath.split("/")[1].split("?")[1]);
+  const amount = parseInt((router.asPath.split("/")[1].split("?")[1])/100);
+  console.log(amount);
+  const { user, connect, isLoggedIn, loading, loginWithSocial, provider } =
+    useAuth();
   useEffect(() => {
-    async function MintNFT() {
-      const router = useRouter();
+    async function MintNFT(amount) {
       await authArcana.init();
-      const provider = new ethers.providers.JsonRpcProvider(rpcURLnetwork);
+      const Provider = new ethers.providers.Web3Provider(provider);
+      const signer = Provider.getSigner();
 
-      const icc = new ethers.Contract(contractAddress, ICC.abi, provider);
-      const res = await icc.buyTicket();
+      const icc = new ethers.Contract(contractAddress, ICC.abi, signer);
+      const res = await icc.buyTicket(amount, 2);
+      console.log(res);
     }
-    MintNFT();
+    MintNFT(amount);
   });
 
   const getTokenId = async () => {
@@ -25,17 +33,18 @@ export default function MintTicket() {
     console.log(res);
   };
   const getTokenBalances = async () => {
+    console.log(user);
     const provider = new ethers.providers.JsonRpcProvider(rpcURLnetwork);
     const icc = new ethers.Contract(contractAddress, ICC.abi, provider);
-    const res = await icc.nftTokenBalances(
-      "0x5B38Da6a701c568545dCfcB03FcB875f56beddC4"
-    );
+    const res = await icc.nftTokenBalances(user.address);
     console.log(res);
   };
   return (
     <div>
-      <button onClick={getTokenId}>See tokenId count</button>
-      <button onClick={getTokenBalances}>
+      <button onClick={getTokenId} className="bg-white">
+        See tokenId count
+      </button>
+      <button onClick={getTokenBalances} className="bg-white">
         see tokens associated with poerson
       </button>
     </div>
