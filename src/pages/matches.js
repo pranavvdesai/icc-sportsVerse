@@ -26,7 +26,7 @@ export default matches
 
 
 export async function getStaticProps() {
-    const res = await fetch("https://iccbackend.up.railway.app/matchs/").then((res) => res.json());
+    const res = await fetch("https://iccbackend.up.railway.app/matches/").then((res) => res.json());
     console.log(res)
     return {
         props: {
