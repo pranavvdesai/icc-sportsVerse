@@ -1,25 +1,68 @@
 import React from "react";
 import TopNav from "../components/TopNav";
 import Image from "next/image";
+import Exploreicc from "../components/Exploreicc";
+import ParticipateContests from "../components/ParticipateContests";
 
 export default function home() {
   return (
     <div>
       <TopNav />
       <div className="mt-10 mx-20">
-        <div className="bg-red-500 w-full p-4 py-8 rounded-md">
-          <h1 className="text-2xl font-Poppins">Random</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div className="grid grid-cols-2 gap-4 mt-10">
-          <div className="relative h-full w-full">
+        <div className=" relative flex h-48 w-full rounded-md items-center">
+          <div className="absolute h-[100%] w-full ">
             <Image
-              src="https://www.zerowicket.com/wp-content/uploads/2015/11/497335744.jpg"
+              src="/iccshop.png"
               layout="fill"
               objectFit="cover"
               className="rounded-md "
               alt="profile"
             />
+          </div>
+          <div className="p-4 absolute text-white font-Poppins backdrop-blur-3xl">
+            <h1 className="text-4xl font-Poppins">ICC STORE</h1>
+            <p className="mt-1">
+              Buy with ICC-TX and get 30% off on all products.
+            </p>
+            <button className=" bg-white text-black px-4 py-2 rounded-md mt-2">
+              View Store
+            </button>
+          </div>
+        </div>
+        <h1 className="text-2xl font-Poppins text-custom-white mt-10">
+          Latest Trending
+        </h1>
+
+        {/* latest trending */}
+        <div className="grid grid-cols-2 gap-4 mt-4">
+          <div className="relative hover:backdrop-blur-xl cursor-pointer ">
+            <div className="relative h-full w-full hover:opacity-70">
+              <Image
+                src="https://www.zerowicket.com/wp-content/uploads/2015/11/497335744.jpg"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-md "
+                alt="profile"
+              />
+            </div>
+            <div className="absolute bottom-0 ml-10">
+              <div className="flex flex-row mb-2">
+                <div className="relative h-10 w-10 rounded-full">
+                  <Image
+                    src="/icctvlogo.png"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-md "
+                    alt="profile"
+                  />
+                </div>
+                <h1 className=" text-white rounded-xl ml-2">ICC TV</h1>
+              </div>
+              <div className="text-3xl text-white mb-6 tracking-wide leading-relaxed font-semibold">
+                India wins the T20 World Cup after 6 years. Kohli hits a 100 and
+                takes the cup home.
+              </div>
+            </div>
           </div>
           <div className="grid grid-rows-2 gap-4">
             <div className="grid grid-cols-2 gap-4">
@@ -28,8 +71,8 @@ export default function home() {
               src="https://picsum.photos/200"
               alt="Sunset in the mountains"
             /> */}
-              <div>
-                <div className="relative h-28 w-full">
+              <div className="relative">
+                <div className="relative h-full w-full">
                   <Image
                     src="https://www.zerowicket.com/wp-content/uploads/2015/11/497335744.jpg"
                     layout="fill"
@@ -39,17 +82,28 @@ export default function home() {
                   />
                 </div>
 
-                <div className="px-2 py-4 custom-gray">
-                  <div className="font-bold text-xl mb-2">Avatar lvl.</div>
-                  <p className="text-[#9a9999] text-base pb-2">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Voluptatibus quia, nulla! Maiores et perferendis eaque,
-                    exercitationem praesentium nihil.
+                <div className="absolute bottom-0 px-2 py-4 backdrop-blur-md">
+                  <div className=" mb-2 flex flex-row items-center">
+                    <div className="relative h-8 w-8">
+                      <Image
+                        src="/icctvlogo.png"
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-full "
+                        alt="profile"
+                      />
+                    </div>
+                    <p className="ml-2 text-custom-white font-Poppins">
+                      Icc Mens World Cup
+                    </p>
+                  </div>
+                  <p className="text-white text-base pb-2">
+                    Kohli gets Mom award for 5th time.
                   </p>
                 </div>
               </div>
-              <div>
-                <div className="relative h-28 w-full">
+              <div className="relative">
+                <div className="relative h-full w-full">
                   <Image
                     src="https://www.zerowicket.com/wp-content/uploads/2015/11/497335744.jpg"
                     layout="fill"
@@ -59,12 +113,23 @@ export default function home() {
                   />
                 </div>
 
-                <div className="px-2 py-4 custom-gray">
-                  <div className="font-bold text-xl mb-2">Avatar lvl.</div>
-                  <p className="text-[#9a9999] text-base pb-2">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Voluptatibus quia, nulla! Maiores et perferendis eaque,
-                    exercitationem praesentium nihil.
+                <div className="absolute bottom-0 px-2 py-4 backdrop-blur-md">
+                  <div className=" mb-2 flex flex-row items-center">
+                    <div className="relative h-8 w-8">
+                      <Image
+                        src="/icctvlogo.png"
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-full "
+                        alt="profile"
+                      />
+                    </div>
+                    <p className="ml-2 text-custom-white font-Poppins">
+                      Icc Mens World Cup
+                    </p>
+                  </div>
+                  <p className="text-white text-base pb-2">
+                    Kohli gets Mom award for 5th time.
                   </p>
                 </div>
               </div>
@@ -75,8 +140,8 @@ export default function home() {
               src="https://picsum.photos/200"
               alt="Sunset in the mountains"
             /> */}
-              <div>
-                <div className="relative h-28 w-full">
+              <div className="relative">
+                <div className="relative h-full w-full">
                   <Image
                     src="https://www.zerowicket.com/wp-content/uploads/2015/11/497335744.jpg"
                     layout="fill"
@@ -86,17 +151,28 @@ export default function home() {
                   />
                 </div>
 
-                <div className="px-2 py-4 custom-gray">
-                  <div className="font-bold text-xl mb-2">Avatar lvl.</div>
-                  <p className="text-[#9a9999] text-base pb-2">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Voluptatibus quia, nulla! Maiores et perferendis eaque,
-                    exercitationem praesentium nihil.
+                <div className="absolute bottom-0 px-2 py-4 backdrop-blur-md">
+                  <div className=" mb-2 flex flex-row items-center">
+                    <div className="relative h-8 w-8">
+                      <Image
+                        src="/icctvlogo.png"
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-full "
+                        alt="profile"
+                      />
+                    </div>
+                    <p className="ml-2 text-custom-white font-Poppins">
+                      Icc Mens World Cup
+                    </p>
+                  </div>
+                  <p className="text-white text-base pb-2">
+                    Kohli gets Mom award for 5th time.
                   </p>
                 </div>
               </div>
-              <div>
-                <div className="relative h-28 w-full">
+              <div className="relative">
+                <div className="relative h-72 w-full">
                   <Image
                     src="https://www.zerowicket.com/wp-content/uploads/2015/11/497335744.jpg"
                     layout="fill"
@@ -106,19 +182,77 @@ export default function home() {
                   />
                 </div>
 
-                <div className="px-2 py-4 custom-gray">
-                  <div className="font-bold text-xl mb-2">Avatar lvl.</div>
-                  <p className="text-[#9a9999] text-base pb-2">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Voluptatibus quia, nulla! Maiores et perferendis eaque,
-                    exercitationem praesentium nihil.
+                <div className="absolute bottom-0 px-2 py-4 backdrop-blur-md">
+                  <div className=" mb-2 flex flex-row items-center">
+                    <div className="relative h-8 w-8">
+                      <Image
+                        src="/icctvlogo.png"
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-full "
+                        alt="profile"
+                      />
+                    </div>
+                    <p className="ml-2 text-custom-white font-Poppins">
+                      Icc Mens World Cup
+                    </p>
+                  </div>
+                  <p className="text-white text-base pb-2">
+                    Kohli gets Mom award for 5th time.
                   </p>
                 </div>
               </div>
             </div>
-            
-            
           </div>
+        </div>
+
+        {/* explore icc */}
+        <h1 className="text-2xl font-Poppins text-custom-white mt-10">
+          Explore ICC
+        </h1>
+        <div className="grid grid-cols-6 gap-4 mt-4">
+          <Exploreicc />
+          <Exploreicc />
+          <Exploreicc />
+          <Exploreicc />
+          <Exploreicc />
+          <Exploreicc />
+        </div>
+
+        {/* explore events */}
+        <h1 className=" font-Poppins text-2xl text-custom-white mt-10">
+          Explore events
+        </h1>
+        <div className=" relative flex h-48 w-full rounded-md items-center mt-4">
+          <div className="absolute h-[100%] w-full ">
+            <Image
+              src="/iccshop.png"
+              layout="fill"
+              objectFit="cover"
+              className="rounded-md "
+              alt="profile"
+            />
+          </div>
+          <div className="p-4 absolute text-white font-Poppins backdrop-blur-3xl">
+            <h1 className="text-4xl font-Poppins">Meet and Greet with Dhoni</h1>
+            <p className="mt-1">
+              Check your avatar level and get a chance to meet Dhoni
+            </p>
+            <button className=" bg-white text-black px-4 py-2 rounded-md mt-2">
+              Go to event
+            </button>
+          </div>
+        </div>
+
+        {/* participate in contests */}
+        <h1 className=" font-Poppins text-2xl text-custom-white mt-10">
+          Participate in contests
+        </h1>
+        <div className="grid grid-cols-4 gap-6 mt-4 mb-10">
+          <ParticipateContests title="lorem ipsum" img="/contesthome1.png" />
+          <ParticipateContests title="lorem ipsum" img="/contesthome1.png" />
+          <ParticipateContests title="lorem ipsum" img="/contesthome1.png" />
+          <ParticipateContests title="lorem ipsum" img="/contesthome1.png" />
         </div>
       </div>
     </div>
