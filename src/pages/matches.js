@@ -1,6 +1,7 @@
 import React from 'react'
 import TopNav from '../components/TopNav'
 import MatchCard from '../components/MatchCard'
+import axios from 'axios'
 
 const matches = ({
     data
@@ -30,11 +31,11 @@ export default matches
 
 
 export async function getStaticProps() {
-    const res = await fetch("https://iccbackend.up.railway.app/matches/").then((res) => res.json());
-    console.log(res)
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/matches/`)
+    console.log(res.data)
     return {
         props: {
-            data: res,
+            data: res.data,
         },
     };
 }

@@ -148,7 +148,7 @@ export default function home() {
               <div className="relative">
                 <div className="relative h-full w-full">
                   <Image
-                    src="https://www.zerowicket.com/wp-content/uploads/2015/11/497335744.jpg"
+                    src="/img1.jpg"
                     layout="fill"
                     objectFit="cover"
                     className="rounded-md "

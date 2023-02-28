@@ -1,11 +1,11 @@
 import React from 'react'
 import TopNav from '../components/TopNav'
 import LeagueCard from '../components/LeagueCard'
-const leagues = () => {
+const sets = () => {
     return (
         <>
             <TopNav />
-            <div className='text-5xl bold text-white ml-10 my-8'>LEAGUES</div>
+            <div className='text-5xl bold text-white ml-10 my-8'>SETS</div>
             <div className='text-xl bold text-white mx-10 '>
             Get used to the game before you enter the pro leagues!
 
@@ -24,4 +24,4 @@ const leagues = () => {
     )
 }
 
-export default leagues
+export default sets;

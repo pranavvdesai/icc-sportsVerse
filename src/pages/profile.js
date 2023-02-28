@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import axios from "axios";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { BsTwitter } from "react-icons/bs";
 import { AiFillLinkedin } from "react-icons/ai";

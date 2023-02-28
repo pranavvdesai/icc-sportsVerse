@@ -7,16 +7,15 @@ const ContestCard = () => {
   // convert the date to a readable format
   //const date = new Date(item.date).toDateString();
   return (
-    <div className="flex flex-wrap">
-     
-        <div className="flex-auto w-1/3 py-3 pr-5 border-2 border-slate-700 rounded-xl m-5 bg-[url('https://thumbs.dreamstime.com/b/man-s-hand-fire-holding-up-gold-medal-winner-competition-dark-background-101561914.jpg')]">
+    <div className="flex flex-wrap justify-center align-center">
+     <div className="flex-2 w-1/3 py-3 pr-5 border-2 border-slate-700 rounded-xl m-5 bg-[url('https://prod-assets-s3.faze.app/assets/home/play/tm7.webp')]">
           {/* Just for image div-LHS */}
           {/* Content div-RHS */}
           <div className="flex flex-col justify-between flex-grow pl-5">
             {/* Div to display date and time on the right hand side of the card */}
-            <Link href="/leagues">
+            <Link href="/sets">
             <div className="flex justify-between">
-              <h4 className="text-2xl font-bold">SETS</h4>
+              <h4 className="text-5xl font-bold">SETS</h4>
               <h5 className="text-white text-lg">
                 <span class="inline-block whitespace-nowrap rounded-[0.27rem] bg-green-500 px-[0.65em] pt-[0.35em] pb-[0.25em] text-center align-baseline text-[0.75em] font-bold leading-none text-primary-700">
                   New
@@ -27,7 +26,7 @@ const ContestCard = () => {
               </h5>
             </div>
             <div className="flex justify-between">
-              <h5 className="text-white text-md">Date published : 1/1/2023 </h5>
+              <h5 className="text-white text-2xl">Date published : 1/1/2023 </h5>
             </div>
             <div className="border-b w-full pt-2" />
             {/* Team div */}
@@ -56,7 +55,7 @@ const ContestCard = () => {
                   Buy Tickets
                 </button>
               </Link> */}
-                <h4 className="text-xl text-gray-400 mr-5">
+                <h4 className="text-2xl text-white mr-5">
                   Rewards : Rs 10000/-
                 </h4>
               </div>
@@ -64,15 +63,14 @@ const ContestCard = () => {
             </Link>
           </div>
         </div>
-
-      <div className="flex-auto w-1/3 py-3 pr-5 border-2 border-slate-700 rounded-xl m-5 bg-[url('https://thumbs.dreamstime.com/b/man-s-hand-fire-holding-up-gold-medal-winner-competition-dark-background-101561914.jpg')]">
+      <div className="flex-2 w-1/3 py-3 pr-5 border-2 border-slate-700 rounded-xl m-5 bg-repeat-y	 bg-[url('https://prod-assets-s3.faze.app/assets/home/play/tm3.webp')]">
         {/* Just for image div-LHS */}
         {/* Content div-RHS */}
         <div className="flex flex-col justify-between flex-grow pl-5">
-        <Link href="/league">
+        <Link href="/quizes">
           {/* Div to display date and time on the right hand side of the card */}
           <div className="flex justify-between">
-            <h4 className="text-2xl font-bold">QUIZES</h4>
+            <h4 className="text-5xl font-bold">QUIZES</h4>
             <h5 className="text-white text-lg">
               <span class="inline-block whitespace-nowrap rounded-[0.27rem] bg-green-500 px-[0.65em] pt-[0.35em] pb-[0.25em] text-center align-baseline text-[0.75em] font-bold leading-none text-primary-700">
                 New
@@ -83,7 +81,7 @@ const ContestCard = () => {
             </h5>
           </div>
           <div className="flex justify-between">
-            <h5 className="text-white text-md">Date published : 1/1/2023 </h5>
+            <h5 className="text-white text-2xl">Date published : 1/1/2023 </h5>
           </div>
           <div className="border-b w-full pt-2" />
           {/* Team div */}
@@ -112,7 +110,7 @@ const ContestCard = () => {
                   Buy Tickets
                 </button>
               </Link> */}
-              <h4 className="text-lg text-gray-400 mr-5">
+              <h4 className="text-2xl text-white mr-5">
                 Rewards : Rs 10000 /-
               </h4>
             </div>
@@ -120,14 +118,14 @@ const ContestCard = () => {
           </Link>
         </div>
       </div>
-      <div className="flex-auto w-1/2 py-3 pr-5 border-2 border-slate-700 rounded-xl m-5 bg-[url('https://c4.wallpaperflare.com/wallpaper/690/934/426/marvel-contest-of-champions-games-hd-marvel-wallpaper-preview.jpg')]">
+      <div className="flex-2 w-1/3 py-3 pr-5 border-2 border-slate-700 rounded-xl m-5 bg-[url('https://prod-assets-s3.faze.app/assets/marketplace/marketplace-bg-web.webp')]">
         {/* Just for image div-LHS */}
         {/* Content div-RHS */}
         <div className="flex flex-col justify-between flex-grow pl-5">
           {/* Div to display date and time on the right hand side of the card */}
           <Link href="/leagues">
           <div className="flex justify-between">
-            <h4 className="text-2xl font-bold">Leagues</h4>
+            <h4 className="text-5xl font-bold">LEAGUES</h4>
             <h5 className="text-white text-lg">
               <span class="inline-block whitespace-nowrap rounded-[0.27rem] bg-green-500 px-[0.65em] pt-[0.35em] pb-[0.25em] text-center align-baseline text-[0.75em] font-bold leading-none text-primary-700">
                 New
@@ -138,7 +136,7 @@ const ContestCard = () => {
             </h5>
           </div>
           <div className="flex justify-between">
-            <h5 className="text-white text-md">Date published : 1/1/2023 </h5>
+            <h5 className="text-white text-xl">Date published : 1/1/2023 </h5>
           </div>
           <div className="border-b w-full pt-2" />
           {/* Team div */}
@@ -167,7 +165,7 @@ const ContestCard = () => {
                   Buy Tickets
                 </button>
               </Link> */}
-              <h4 className="text-lg text-gray-400 mr-5">
+              <h4 className="text-2xl text-white mr-5">
                 Rewards : Rs 10000 /-
               </h4>
             </div>
@@ -175,14 +173,14 @@ const ContestCard = () => {
           </Link>
         </div>
       </div>
-      <div className="flex-auto py-3 pr-5 border-2 border-slate-700 rounded-xl m-5 bg-[url('https://media.istockphoto.com/id/1030851308/photo/diamond-silver-crown-miss-pageant-beauty-contest.jpg?s=612x612&w=0&k=20&c=lTZPhVhu51TBDZhBq_CqIQEbz21JJjq-RB6Hdxa8aao=')]">
+      <div className="flex-2 py-3 w-1/3 pr-5 border-2 border-slate-700 rounded-xl m-5 bg-[url('https://media.istockphoto.com/id/1030851308/photo/diamond-silver-crown-miss-pageant-beauty-contest.jpg?s=612x612&w=0&k=20&c=lTZPhVhu51TBDZhBq_CqIQEbz21JJjq-RB6Hdxa8aao=')]">
         {/* Just for image div-LHS */}
         {/* Content div-RHS */}
         <div className="flex flex-col justify-between flex-grow pl-5">
           {/* Div to display date and time on the right hand side of the card */}
           
           <div className="flex justify-between">
-            <h4 className="text-2xl font-bold">TOP REWARD WINNERS</h4>
+            <h4 className="text-5xl font-bold">TOP REWARD WINNERS</h4>
           </div>
 
           <div className="border-b w-full pt-2" />

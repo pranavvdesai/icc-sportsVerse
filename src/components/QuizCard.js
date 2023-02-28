@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ProgressBar from "@ramonak/react-progress-bar";
 
-const LeagueCard = () => {
+const QuizCard = () => {
   //console.log(item);
   // convert the date to a readable format
   //const date = new Date(item.date).toDateString();
@@ -300,4 +300,4 @@ const LeagueCard = () => {
   );
 };
 
-export default LeagueCard;
+export default QuizCard;

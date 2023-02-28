@@ -6,7 +6,7 @@ export default function Exploreicc() {
     <div className="flex flex-col items-center">
       <div className="relative h-28 w-full ">
         <Image
-          src="https://www.zerowicket.com/wp-content/uploads/2015/11/497335744.jpg"
+          src="/img1.jpg"
           layout="fill"
           objectFit="cover"
           className="rounded-md "

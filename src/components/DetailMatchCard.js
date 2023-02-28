@@ -7,21 +7,21 @@ import axios from 'axios'
 
 
 const DetailMatchCard = ({ matchId }) => {
-    const [noOfTickets, setNoOfTickets] = useState(0)
-    const [tier, setTier] = useState('')
-    const [match, setMatch] = useState({})
-    // const router = useRouter()
-    useEffect(() => {
-        async function getMatch() {
-            const res = await axios.get(`https://iccbackend.up.railway.app/matches/${matchId}`)
-            console.log(res.data)
-            setMatch(res.data)
+  const [noOfTickets, setNoOfTickets] = useState(0)
+  const [tier, setTier] = useState('')
+  const [match, setMatch] = useState({})
+  // const router = useRouter()
+  useEffect(() => {
+    async function getMatch() {
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/matches/${matchId}`)
+      console.log(res.data)
+      setMatch(res.data)
 
-        }
-        getMatch()
-    }, [])
-    
-    console.log(match)
+    }
+    getMatch()
+  }, [])
+
+  console.log(match)
 
   const handleSubmitTicket = () => {
     let price_now;
@@ -35,11 +35,10 @@ const DetailMatchCard = ({ matchId }) => {
     console.log("Submit Ticket");
     console.log(noOfTickets);
     console.log(tier);
-      
 
-    window.location.href = `https://iccbackend.up.railway.app/razorpay/pay?amount=${
-      price_now * 100
-    }&user=1&tickets=${noOfTickets}&tier=${tier}`;
+
+    window.location.href = `${process.env.NEXT_PUBLIC_BACKEND_URL}/razorpay/pay?amount=${price_now * 100
+      }&user=1&tickets=${noOfTickets}&tier=${tier}`;
   };
 
   return (
@@ -169,10 +168,10 @@ const DetailMatchCard = ({ matchId }) => {
               {tier === "Gold"
                 ? 1000
                 : tier === "Silver"
-                ? 500
-                : tier === "Bronze"
-                ? 100
-                : 0}{" "}
+                  ? 500
+                  : tier === "Bronze"
+                    ? 100
+                    : 0}{" "}
               * {noOfTickets > 0 ? noOfTickets : 0}
             </h1>
           </div>
@@ -183,10 +182,10 @@ const DetailMatchCard = ({ matchId }) => {
                 ? tier === "Gold"
                   ? 1000 * noOfTickets
                   : tier === "Silver"
-                  ? 500 * noOfTickets
-                  : tier === "Bronze"
-                  ? 100 * noOfTickets
-                  : 0
+                    ? 500 * noOfTickets
+                    : tier === "Bronze"
+                      ? 100 * noOfTickets
+                      : 0
                 : 0}
             </h1>
           </div>
@@ -206,10 +205,10 @@ const DetailMatchCard = ({ matchId }) => {
                 ? tier === "Gold"
                   ? 1000 * noOfTickets + 0.87 + 12
                   : tier === "Silver"
-                  ? 500 * noOfTickets + 0.87 + 12
-                  : tier === "Bronze"
-                  ? 100 * noOfTickets + 0.87 + 12
-                  : 0
+                    ? 500 * noOfTickets + 0.87 + 12
+                    : tier === "Bronze"
+                      ? 100 * noOfTickets + 0.87 + 12
+                      : 0
                 : 0}
             </h1>
           </div>
@@ -220,10 +219,10 @@ const DetailMatchCard = ({ matchId }) => {
                 ? tier === "Gold"
                   ? 1000 * noOfTickets + 0.87 + 12
                   : tier === "Silver"
-                  ? 500 * noOfTickets + 0.87 + 12
-                  : tier === "Bronze"
-                  ? 100 * noOfTickets + 0.87 + 12
-                  : 0
+                    ? 500 * noOfTickets + 0.87 + 12
+                    : tier === "Bronze"
+                      ? 100 * noOfTickets + 0.87 + 12
+                      : 0
                 : 0}{" "}
               ICTX
             </h1>
