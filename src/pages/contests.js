@@ -1,10 +1,7 @@
 import React from 'react'
 import TopNav from '../components/TopNav'
 import ContestCard from '../components/ContestCard'
-const contests = ({
-    data
-}) => {
-    console.log(data[0])
+const contests = () => {
     return (
         <>
             <TopNav />
@@ -24,14 +21,3 @@ const contests = ({
 }
 
 export default contests
-
-
-export async function getStaticProps() {
-    const res = await fetch("https://iccbackend.up.railway.app/matchs/").then((res) => res.json());
-    console.log(res)
-    return {
-        props: {
-            data: res,
-        },
-    };
-}

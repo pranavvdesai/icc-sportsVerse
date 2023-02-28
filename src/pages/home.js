@@ -4,6 +4,7 @@ import Image from "next/image";
 import Exploreicc from "../components/Exploreicc";
 import ParticipateContests from "../components/ParticipateContests";
 import HomeAvatar from "../components/HomeAvatar";
+import HomeTokens from "../components/HomeTokens";
 
 export default function home() {
   return (
@@ -31,7 +32,8 @@ export default function home() {
           </div>
         </div>
 
-           <HomeAvatar />   
+        <HomeAvatar />   
+        <HomeTokens />
         <h1 className="text-2xl font-Poppins text-custom-white mt-10">
           Latest Trending
         </h1>
