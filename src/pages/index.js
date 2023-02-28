@@ -5,7 +5,7 @@ import Web3Modal, { providers } from "web3modal";
 import { ethers } from "ethers";
 // import * as PushAPI from "@pushprotocol/restapi";
 import { useAuth } from "@arcana/auth-react";
-import { rpcURLnetwork , authArcana } from "../utils/authArcana";
+import { rpcURLnetwork, authArcana } from "../utils/authArcana";
 
 export default function Login() {
   const [email, setEmail] = React.useState("");
@@ -22,11 +22,7 @@ export default function Login() {
   };
   const onConnect = async () => {
     console.log("connected");
-    console.log(ethers.providers);
-    const Provider = new ethers.providers.Web3Provider(provider);
-    const signer = Provider.getSigner();
     await authArcana.init();
-    const info = await authArcana.getUser();
     Router.push("/home");
   };
   React.useEffect(() => {
@@ -36,23 +32,6 @@ export default function Login() {
     };
 
   }, [provider]);
-
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    console.log(email, password);
-
-    // const web3Modal = new Web3Modal();
-    // const connection = await web3Modal.connect();
-    // const provider = new ethers.providers.Web3Provider(connection);
-    // const signer = provider.getSigner();
-    
-
-    const Provider = new ethers.providers.Web3Provider(provider);
-    const signer = Provider.getSigner();
-    await authArcana.init();
-    const info = await authArcana.getUser();
-    Router.push("/home");
-  };
   // TODO: Integrate Arcana Login
   return (
     <>

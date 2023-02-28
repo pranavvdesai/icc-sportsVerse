@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { BsTwitter } from "react-icons/bs";
@@ -7,8 +7,15 @@ import { AiFillLinkedin } from "react-icons/ai";
 import { BsInstagram } from "react-icons/bs";
 import Accordion from "../components/Accordion";
 import TopNav from "../components/TopNav";
+import Avatar, { genConfig } from 'react-nice-avatar'
 
-export default function profile() {
+export default function Profile() {
+  const [config, setConfig] = useState({})
+  useEffect(() => {
+    axios.get()
+    
+  }, [])
+
   return (
     <>
       <TopNav />
@@ -28,14 +35,15 @@ export default function profile() {
               src="https://picsum.photos/200"
               alt="Sunset in the mountains"
             /> */}
-              <div className="relative h-96 w-full">
-                <Image
+              <div className="relative h-96 w-[50%]  ">
+                {/* <Image
                   src="https://media.giphy.com/media/10fS0TJxfFRDLW/giphy.gif"
                   layout="fill"
                   objectFit="cover"
                   className="rounded-md "
                   alt="profile"
-                />
+                /> */}
+                <Avatar className="w-full h-full" {...config} />
               </div>
 
               <div className="px-2 py-4 mt-4 custom-gray">
