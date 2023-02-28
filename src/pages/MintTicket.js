@@ -22,31 +22,15 @@ export default function MintTicket() {
       const icc = new ethers.Contract(contractAddress, ICC.abi, signer);
       const res = await icc.buyTicket(amount, 2);
       console.log(res);
+      window.location.href = "http://localhost:3000/Myticket";
     }
     MintNFT(amount);
   });
 
-  const getTokenId = async () => {
-    const provider = new ethers.providers.JsonRpcProvider(rpcURLnetwork);
-    const icc = new ethers.Contract(contractAddress, ICC.abi, provider);
-    const res = await icc.tokenId();
-    console.log(res);
-  };
-  const getTokenBalances = async () => {
-    console.log(user);
-    const provider = new ethers.providers.JsonRpcProvider(rpcURLnetwork);
-    const icc = new ethers.Contract(contractAddress, ICC.abi, provider);
-    const res = await icc.nftTokenBalances(user.address);
-    console.log(res);
-  };
+  
   return (
     <div>
-      <button onClick={getTokenId} className="bg-white">
-        See tokenId count
-      </button>
-      <button onClick={getTokenBalances} className="bg-white">
-        see tokens associated with poerson
-      </button>
+      redirecting ....
     </div>
   );
 }
