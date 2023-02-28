@@ -9,7 +9,24 @@ import MyTicket from "../components/MyTicket";
 // import { useAuth } from "@arcana/auth-react";
 
 export default function Myticket() {
+  const [tickets, setTickets] = React.useState([]);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    async function getMyTicket() {
+      const res = await axios.get(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/razorpay/myTickets`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
 
+      );
+      setTickets(res.data);
+    }
+    getMyTicket();
+  }, []);
+  console.log(tickets);
   // const { user, connect, isLoggedIn, loading, loginWithSocial, provider } =
   //   useAuth();
 

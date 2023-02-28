@@ -6,6 +6,8 @@ import { ethers } from "ethers";
 // import * as PushAPI from "@pushprotocol/restapi";
 import { useAuth } from "@arcana/auth-react";
 import { rpcURLnetwork, authArcana } from "../utils/authArcana";
+import axios from "axios";
+
 
 export default function Login() {
   const [email, setEmail] = React.useState("");
@@ -23,7 +25,51 @@ export default function Login() {
   const onConnect = async () => {
     console.log("connected");
     await authArcana.init();
-    Router.push("/home");
+    const info = await authArcana.getUser();
+    console.log(info);
+    try {
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/jwt/create`,
+        {
+          email: info.email,
+          password: info.address,
+          re_password: info.address,
+        }
+      );
+      console.log(res.data);
+      localStorage.setItem("token", res.data.token);
+      setTimeout(() => {
+        Router.push("/home");
+      }, 2000);
+    }
+    catch (e) {
+      if (e.response.data.detail === "No active account found with the given credentials") {
+        const res = await axios.post(
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/users/`,
+          {
+            email: info.email,
+            password: info.address,
+            re_password: info.address,
+          }
+        );
+        console.log(res.data);
+        const res2 = await axios.post(
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/jwt/create`,
+          {
+            email: info.email,
+            password: info.address,
+            re_password: info.address,
+          }
+        );
+        console.log(res2.data);
+        if (res2.data.access) {
+          localStorage.setItem("token", res2.data.access);
+          setTimeout(() => {
+            Router.push("/home");
+          }, 2000);
+        }
+      }
+    }
   };
   React.useEffect(() => {
     provider.on("connect", onConnect);
