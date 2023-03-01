@@ -7,9 +7,11 @@ const MatchCard = ({ matchId, item }) => {
     // console.log(item)
     // convert the date to a readable format
     const date = new Date(item.date).toDateString();
+    // Remove seconds from the time
+    const time = item.time.split(":").slice(0, 2).join(":");
     // const id = 1234;
     return (
-        <div className="flex py-3 pr-5 border-2 border-slate-700 custom-gray rounded-xl m-5">
+        <div className="flex py-3 pr-5 border-2 border-slate-700 custom-gray shadow-2xl rounded-xl m-5">
             {/* Just for image div-LHS */}
             {/* Content div-RHS */}
             <div className='flex flex-col justify-between flex-grow pl-5'>
@@ -34,7 +36,7 @@ const MatchCard = ({ matchId, item }) => {
                     </h4>
                     <h5 className='text-white text-lg'>
                         {
-                            item.time
+                            time
                         } IST
                     </h5>
                 </div>
