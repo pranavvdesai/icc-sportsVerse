@@ -1,13 +1,12 @@
 /* eslint-disable react/no-danger */
 import React, { useState, useRef } from "react";
 
-const Accordion = () => {
+const Accordion = (props) => {
   const [setActive, setActiveState] = useState("");
   const [setHeight, setHeightState] = useState("0px");
   const [setDisplay, setDisplayState] = useState("displayBorder");
   const [hideBorder, setHideBorder] = useState("accordion");
   const content = useRef(null);
-
   function toggleAccordion() {
     setActiveState(setActive === "" ? "active" : "");
     setHeightState(
@@ -28,7 +27,7 @@ const Accordion = () => {
       >
         <div className="flex items-center justify-between w-full">
           <div className={`accordion__title font-Poppins`}>
-            Description
+            {props.title}
           </div>
           <div className="accordion__icon">
             <svg
@@ -55,7 +54,9 @@ const Accordion = () => {
       >
         <div
           className="accordion__text "
-          dangerouslySetInnerHTML={{ __html: "sdfdsfdsfdsfdsf" }}
+          dangerouslySetInnerHTML={{
+            __html: `${props.desc}`,
+          }}
         />
       </div>
     </div>
