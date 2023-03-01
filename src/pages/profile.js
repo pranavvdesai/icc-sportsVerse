@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import axios from "axios";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { BsTwitter } from "react-icons/bs";
 import { AiFillLinkedin } from "react-icons/ai";
@@ -9,12 +8,35 @@ import { BsInstagram } from "react-icons/bs";
 import Accordion from "../components/Accordion";
 import TopNav from "../components/TopNav";
 import Avatar, { genConfig } from 'react-nice-avatar'
+import axios from "axios";
 
 export default function Profile() {
   const [config, setConfig] = useState({})
+
+
+  // async function getConfig() {
+  //   return await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/me/get-avatar`,
+  //     {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     }
+  //   );
+  // }
   useEffect(() => {
-    axios.get()
-    
+    const token = localStorage.getItem("token");
+    axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/me/get-avatar`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    ).then((res) => {
+      console.log(res.data)
+      setConfig(res.data)
+    })
+    console.log(config)
+
   }, [])
 
   return (
