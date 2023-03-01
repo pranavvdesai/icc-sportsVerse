@@ -13,7 +13,7 @@ const FantasyCard = () => {
     <div>
       <div className="flex flex-wrap">
         <div className="w-full">
-          <div className="grid grid-cols-4 gap-2">
+          <div className="grid grid-cols-4 gap-5">
             <div className="h-4/5 rounded  overflow-hidden shadow-lg bg-grey-700 border">
               <img
                 className="w-2/3 h-2/3 ml-12 mt-5"
