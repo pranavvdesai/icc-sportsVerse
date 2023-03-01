@@ -20,7 +20,7 @@ export default function MintTicket() {
       const signer = Provider.getSigner();
 
       const icc = new ethers.Contract(contractAddress, ICC.abi, signer);
-      const res = await icc.buyTicket(amount, 2);
+      const res = await icc.buyTicket(amount);
       console.log(res);
       window.location.href = "http://localhost:3000/Myticket";
     }
@@ -29,7 +29,7 @@ export default function MintTicket() {
 
   
   return (
-    <div>
+    <div className="text-white mx-auto mt-10">
       redirecting ....
     </div>
   );
