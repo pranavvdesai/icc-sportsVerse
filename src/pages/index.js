@@ -37,7 +37,7 @@ export default function Login() {
         }
       );
       console.log(res.data);
-      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("token", res.data.access);
       setTimeout(() => {
         Router.push("/home");
       }, 2000);
