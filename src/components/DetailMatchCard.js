@@ -1,20 +1,27 @@
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import axios from "axios";
+import React, { useState, useEffect } from 'react'
+import Image from 'next/image'
+import axios from 'axios'
+
+
+
 
 const DetailMatchCard = ({ matchId }) => {
-  const [noOfTickets, setNoOfTickets] = useState(0);
-  const [tier, setTier] = useState("");
-  const [match, setMatch] = useState({});
-  // const router = useRouter()
+  const [noOfTickets, setNoOfTickets] = useState(0)
+  const [tier, setTier] = useState('')
+  const [match, setMatch] = useState({})
   useEffect(() => {
+    const token = localStorage.getItem("token");
     async function getMatch() {
-      const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/matches/${matchId}`
-      );
-      console.log(res.data);
-      setMatch(res.data);
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/matches/${matchId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      console.log(res.data)
+      setMatch(res.data)
+
     }
     getMatch();
   }, []);
@@ -34,11 +41,9 @@ const DetailMatchCard = ({ matchId }) => {
     console.log(noOfTickets);
     console.log(tier);
 
-    window.location.href = `${
-      process.env.NEXT_PUBLIC_BACKEND_URL
-    }/razorpay/pay?amount=${
-      price_now * 100
-    }&user=1&tickets=${noOfTickets}&tier=${tier}`;
+
+    window.location.href = `${process.env.NEXT_PUBLIC_BACKEND_URL}/razorpay/pay?amount=${price_now * 100
+      }&user=${match.userId}&tickets=${noOfTickets}&tier=${tier}`;
   };
 
   return (

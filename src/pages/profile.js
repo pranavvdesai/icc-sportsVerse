@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import axios from "axios";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { BsTwitter } from "react-icons/bs";
 import { AiFillLinkedin } from "react-icons/ai";
@@ -9,12 +8,35 @@ import { BsInstagram } from "react-icons/bs";
 import Accordion from "../components/Accordion";
 import TopNav from "../components/TopNav";
 import Avatar, { genConfig } from 'react-nice-avatar'
+import axios from "axios";
 
 export default function Profile() {
   const [config, setConfig] = useState({})
+
+
+  // async function getConfig() {
+  //   return await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/me/get-avatar`,
+  //     {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     }
+  //   );
+  // }
   useEffect(() => {
-    axios.get()
-    
+    const token = localStorage.getItem("token");
+    axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/me/get-avatar`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    ).then((res) => {
+      console.log(res.data)
+      setConfig(res.data)
+    })
+    console.log(config)
+
   }, [])
 
   return (
@@ -30,21 +52,29 @@ export default function Profile() {
             className="rounded-sm"
             alt="profile"
           /> */}
-            <div className="w-full h-full rounded overflow-hidden shadow-lg">
+            <div className="w-full h-full rounded overflow-hidden ">
               {/* <img
               className="w-full"
               src="https://picsum.photos/200"
               alt="Sunset in the mountains"
             /> */}
-              <div className="relative h-96 w-[50%]  ">
-                {/* <Image
+              <div className="flex">
+                <div className="relative h-96 w-[50%]  ">
+                  {/* <Image
                   src="https://media.giphy.com/media/10fS0TJxfFRDLW/giphy.gif"
                   layout="fill"
                   objectFit="cover"
                   className="rounded-md "
                   alt="profile"
                 /> */}
-                <Avatar className="w-full h-full" {...config} />
+                  <Avatar className="w-full h-full" {...config} />
+                </div>
+                <div className="w-[50%]">
+                  <h1>Attributes</h1>
+                  <div>
+                    <p>Hair</p>
+                  </div>
+                </div>
               </div>
 
               <div className="px-2 py-4 mt-4 custom-gray">
@@ -71,7 +101,9 @@ export default function Profile() {
             </div>
           </div>
           <div className="w-[50%] mr-10">
-            <p className="text-custom-blue1 text-xl py-2">0x573923034938248274</p>
+            <p className="text-custom-blue1 text-xl py-2">
+              0x573923034938248274
+            </p>
             <div className="flex items-center justify-between">
               <h1 className="text-4xl font-Poppins py-2">Pranav Desai</h1>
               <div className="flex">
@@ -82,7 +114,6 @@ export default function Profile() {
             </div>
             <h1 className="text-xl">Wallet balance: 44 ICCTX</h1>
             <div className="my-4 mt-6">
-
               <Accordion />
               <Accordion />
             </div>
