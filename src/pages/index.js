@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Router from "next/router";
 import Head from "next/head";
 // import * as PushAPI from "@pushprotocol/restapi";
@@ -8,8 +8,9 @@ import axios from "axios";
 
 
 export default function Login() {
-  const { user, connect, isLoggedIn, loading, loginWithSocial, provider } =
-    useAuth();
+  const { user, connect, isLoggedIn, loading, loginWithSocial, provider } = useAuth();
+  const [loader, setLoader] = useState(false);
+
   const onConnectClick = async () => {
     try {
       await connect();
@@ -17,7 +18,9 @@ export default function Login() {
       console.log(e);
     }
   };
+
   const onConnect = async () => {
+    setLoader(true);
     console.log("connected");
     await authArcana.init();
     const info = await authArcana.getUser();
@@ -33,9 +36,8 @@ export default function Login() {
       );
       console.log(res.data);
       localStorage.setItem("token", res.data.access);
-      setTimeout(() => {
-        Router.push("/home");
-      }, 2000);
+      setLoader(false);
+      Router.push("/home");
     }
     catch (e) {
       if (e.response.data.detail === "No active account found with the given credentials") {
@@ -59,9 +61,8 @@ export default function Login() {
         console.log(res2.data);
         if (res2.data.access) {
           localStorage.setItem("token", res2.data.access);
-          setTimeout(() => {
-            Router.push("/home");
-          }, 2000);
+          setLoader(false);
+          Router.push("/home");
         }
       }
     }
@@ -96,6 +97,13 @@ export default function Login() {
             </button>
           </div>
         </div>
+        {/* Show Loader */}
+        {loader && (
+          <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
+            <div className="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4">
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
