@@ -79,7 +79,7 @@ const LeagueCard = () => {
             <div className="px-4 py-5 flex-auto">
               <div className="tab-content tab-space">
                 <div className={openTab === 1 ? "block" : "hidden"} id="link1">
-                  <div className="flex-2 w-2/3 py-3 pr-5 border-2 border-slate-700 rounded-xl m-5 bg-[url('https://prod-assets-s3.faze.app/assets/marketplace/marketplace-bg-web.webp')]">
+                  <div className="flex-2 w-full py-3 pr-5 border-2 border-slate-700 rounded-xl m-5 bg-[url('https://prod-assets-s3.faze.app/assets/marketplace/marketplace-bg-web.webp')]">
                     <div className="flex flex-col justify-between flex-grow pl-5">
                       {/* Div to display date and time on the right hand side of the card */}
                       <Link href="/leagues">
@@ -116,24 +116,10 @@ const LeagueCard = () => {
                           <h5 className="text-white text-xl text-right">
                             Starting Date: 1/3/2023{" "}
                           </h5>
-                        </div>
-                          </h4>
-                          <h5 className="text-white text-lg">
-                            
-                            <span class="inline-block whitespace-nowrap rounded-[0.27rem] bg-blue-500 px-[0.65em] pt-[0.35em] pb-[0.25em] text-center align-baseline text-[0.75em] font-bold leading-none text-primary-700">
-                              Trending
-                            </span>
-                          </h5>
-                        </div>
-
-                       
-                        <div className="border-b w-full pt-2" />
-
-                        {/* Price div */}
-                        <div className="flex justify-between items-end m-8">
+                          <div className="flex justify-between items-end mt-8">
                           {/* Buttons to edit project and view project */}
-                          <div className="flex space-x-4 items-center justify-end text-gray-500">
-                            <h4 className="text-2xl text-white mr-5">
+                          <div className="flex  items-center justify-end text-gray-500">
+                            <h4 className="text-2xl text-white mx-5">
                               Rewards : Rs 10000/-
                             </h4>
                           </div>
@@ -145,12 +131,24 @@ const LeagueCard = () => {
                             Play Now
                           </button>
                         </div>
+                        </div>
+                          </h4>
+                          <h5 className="text-white text-lg">
+                            
+                            <span class="inline-block whitespace-nowrap rounded-[0.27rem] bg-blue-500 px-[0.65em] pt-[0.35em] pb-[0.25em] text-center align-baseline text-[0.75em] font-bold leading-none text-primary-700">
+                              Trending
+                            </span>
+                          </h5>
+                        </div>
+
+                       
+                       
                       </Link>
                     </div>
                   </div>
                 </div>
                 <div className={openTab === 2 ? "block" : "hidden"} id="link2">
-                <div className="flex-2 w-2/3 py-3 pr-5 border-2 border-slate-700 rounded-xl m-5 bg-[url('https://prod-assets-s3.faze.app/assets/marketplace/marketplace-bg-web.webp')]">
+                <div className="flex-2 w-full py-3 pr-5 border-2 border-slate-700 rounded-xl m-5 bg-[url('https://prod-assets-s3.faze.app/assets/marketplace/marketplace-bg-web.webp')]">
                     <div className="flex flex-col justify-between flex-grow pl-5">
                       {/* Div to display date and time on the right hand side of the card */}
                       <Link href="/leagues">
@@ -195,16 +193,10 @@ const LeagueCard = () => {
                               Trending
                             </span>
                           </h5>
-                        </div>
-
-                       
-                        <div className="border-b w-full pt-2" />
-
-                        {/* Price div */}
-                        <div className="flex justify-between items-end m-8">
+                          <div className="flex justify-between items-end mt-8">
                           {/* Buttons to edit project and view project */}
-                          <div className="flex space-x-4 items-center justify-end text-gray-500">
-                            <h4 className="text-2xl text-white mr-5">
+                          <div className="flex  items-center justify-end text-gray-500">
+                            <h4 className="text-2xl text-white mx-5">
                               Rewards : Rs 10000/-
                             </h4>
                           </div>
@@ -216,12 +208,16 @@ const LeagueCard = () => {
                             Play Now
                           </button>
                         </div>
+                        </div>
+
+                       
+                      
                       </Link>
                     </div>
                   </div>
                 </div>
                 <div className={openTab === 3 ? "block" : "hidden"} id="link3">
-                <div className="flex-2 w-2/3 py-3 pr-5 border-2 border-slate-700 rounded-xl m-5 bg-[url('https://prod-assets-s3.faze.app/assets/marketplace/marketplace-bg-web.webp')]">
+                <div className="flex-2 w-full py-3 pr-5 border-2 border-slate-700 rounded-xl m-5 bg-[url('https://prod-assets-s3.faze.app/assets/marketplace/marketplace-bg-web.webp')]">
                     <div className="flex flex-col justify-between flex-grow pl-5">
                       {/* Div to display date and time on the right hand side of the card */}
                       <Link href="/leagues">
@@ -266,16 +262,10 @@ const LeagueCard = () => {
                               Trending
                             </span>
                           </h5>
-                        </div>
-
-                       
-                        <div className="border-b w-full pt-2" />
-
-                        {/* Price div */}
-                        <div className="flex justify-between items-end m-8">
+                          <div className="flex justify-between items-end mt-8">
                           {/* Buttons to edit project and view project */}
-                          <div className="flex space-x-4 items-center justify-end text-gray-500">
-                            <h4 className="text-2xl text-white mr-5">
+                          <div className="flex  items-center justify-end text-gray-500">
+                            <h4 className="text-2xl text-white mx-5">
                               Rewards : Rs 10000/-
                             </h4>
                           </div>
@@ -284,9 +274,12 @@ const LeagueCard = () => {
                             hover:bg-white hover:text-black
                             "
                           >
-                            SEE THE WINNERS
+                            Play Now
                           </button>
                         </div>
+                        </div>
+
+                       
                       </Link>
                     </div>
                   </div>

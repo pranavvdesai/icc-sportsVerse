@@ -1,11 +1,11 @@
 import React from 'react'
 import TopNav from '../components/TopNav'
-import LeagueCard from '../components/LeagueCard'
-const sets = () => {
+import FantasyCard from '../components/FantasyCard'
+const fantasy = () => {
     return (
         <>
             <TopNav />
-            <div className='text-5xl bold text-white ml-10 my-8'>SETS</div>
+            <div className='text-5xl bold text-white ml-10 my-8'>FANTASY</div>
             <div className='text-xl bold text-white mx-10 '>
             Get used to the game before you enter the pro leagues!
 
@@ -18,10 +18,10 @@ const sets = () => {
                         )
                     })
                 } */}
-                <LeagueCard />
+                <FantasyCard />
             </div>
         </>
     )
 }
 
-export default sets;
+export default fantasy;
