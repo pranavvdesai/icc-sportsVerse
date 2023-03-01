@@ -5,7 +5,7 @@ import Image from 'next/image';
 function TopNav() {
     return (
         <>
-            <header className="top-0 z-50 grid grid-cols-2 bg-black	drop-shadow-md p-5 md:px-10">
+            <header className="top-0 z-50 grid grid-cols-2 bg-black	drop-shadow-2xl p-5 md:px-10">
                 <Link href="/home">
                     {/* left most corner */}
                     {/* Show Logo */}
@@ -36,16 +36,20 @@ function TopNav() {
                         Contests
                     </button>
                     <button
-                        onClick={() => Router.push('/profile')}
-                        className="hidden md:inline-flex bg-transparent text-white text-lg px-5 py-2 border border-white-500 rounded-xl hover:text-black hover:bg-white">
-                        Profile
-                    </button>
-                    <button
                         onClick={() => Router.push('/store')}
                         className="hidden md:inline-flex bg-transparent text-white text-lg px-5 py-2 border border-white-500 rounded-xl hover:text-black hover:bg-white">
                         Store
                     </button>
-
+                    <button
+                        onClick={() => Router.push('/wallet')}
+                        className="hidden md:inline-flex bg-transparent text-white text-lg px-5 py-2 border border-white-500 rounded-xl hover:text-black hover:bg-white">
+                        Wallet
+                    </button>
+                    <button
+                        onClick={() => Router.push('/profile')}
+                        className="hidden md:inline-flex bg-transparent text-white text-lg px-5 py-2 border border-white-500 rounded-xl hover:text-black hover:bg-white">
+                        Profile
+                    </button>
                 </div >
             </header >
         </>

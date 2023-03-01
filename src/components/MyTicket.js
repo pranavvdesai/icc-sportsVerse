@@ -16,7 +16,7 @@ const MyTicket = ({ ticket }) => {
   };
 
   return (
-    <div className="py-3 border-2 border-slate-700 rounded-xl m-5 custom-gray">
+    <div className="py-3 border-2 border-slate-700 rounded-xl m-5 custom-gray shadow-2xl">
       {/* Generate a random qr code here */}
       <div className="flex justify-center py-5 items-center">
         <div className="relative w-36 h-36 rounded-full">
@@ -115,7 +115,7 @@ const MyTicket = ({ ticket }) => {
       {/* div to display prize of the ticket */}
 
       <button
-        className="bg-white text-black mx-5 font-semibold py-2 px-4 rounded-md mt-2"
+        className="bg-white text-black mx-5 font-semibold py-2 px-4 rounded-md mt-2 mb-1"
         onClick={() => handleShow(ticket)}
       >
         View Ticket
@@ -181,8 +181,8 @@ const MyTicket = ({ ticket }) => {
                 <h2 className="text-xl text-white font-semibold mt-6 mb-4 mx-auto">
                   {selectedTicket.match?.home_team} vs{" "}
                   {selectedTicket.match?.away_team}
-                              </h2>
-                              <hr className=""></hr>
+                </h2>
+                <hr className=""></hr>
                 <div className="flex justify-between">
                   <h2 className="text-xl text-white font-semibold mt-2">
                     Date
@@ -207,7 +207,7 @@ const MyTicket = ({ ticket }) => {
                     {selectedTicket.match?.venue}
                   </h2>
                 </div>
-                
+
               </div>
             </div>
           </div>

@@ -46,7 +46,7 @@ const DetailMatchCard = ({ matchId }) => {
 
 
     window.location.href = `${process.env.NEXT_PUBLIC_BACKEND_URL}/razorpay/pay?amount=${price_now * 100
-      }&user=${match.userId}&tickets=${noOfTickets}&tier=${tier}`;
+      }&user=${match.userId}&tickets=${noOfTickets}&tier=${tier}&match=${match.id}`;
   };
 
   return (

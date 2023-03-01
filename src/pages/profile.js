@@ -164,7 +164,7 @@ export default function Profile() {
   //     }
   //   );
   // }
- 
+
   console.log(profile);
   console.log(userInfo);
   useEffect(() => {
@@ -283,7 +283,7 @@ export default function Profile() {
                     />
                   </div>
 
-                  <p className=" w-[10%] px-2">{ profile.level}/100</p>
+                  <p className=" w-[10%] px-2">{profile.level}/100</p>
                 </div>
               </div>
               <div className="custom-gray rounded-md p-4 mt-6">
@@ -293,39 +293,33 @@ export default function Profile() {
                 <div className="grid grid-cols-3 gap-2">
                   <div className="flex flex-col bg-[#253239] border border-[#206fbf] p-2 items-center rounded-md">
                     <p className="text-custom-blue1 pb-1">Hair Style</p>
-                    <p className="pb-2">{config.hairStyle}</p>
-                    <p className="text-sm">50%</p>
-                    <p className="text-xs">have this trait</p>
+                    <p className="pb-3 text-xl">{config.hairStyle}</p>
+                    <p className="text-xs">45% have this trait</p>
                   </div>
                   <div className="flex flex-col bg-[#253239] border border-[#206fbf] p-2 items-center rounded-md">
                     <p className="text-custom-blue1 pb-1">Facewear</p>
-                    <p className="pb-2">{config.glassesStyle}</p>
-                    <p className="text-sm">50%</p>
-                    <p className="text-xs">have this trait</p>
+                    <p className="pb-3 text-xl">{config.glassesStyle}</p>
+                    <p className="text-xs">31% have this trait</p>
                   </div>
                   <div className="flex flex-col bg-[#253239] border border-[#206fbf] p-2 items-center rounded-md">
                     <p className="text-custom-blue1 pb-1">Skin tone</p>
-                    <p className="pb-2">{config.faceColor}</p>
-                    <p className="text-sm">50%</p>
-                    <p className="text-xs">have this trait</p>
+                    <p className="pb-3 text-xl">{config.faceColor}</p>
+                    <p className="text-xs">50% have this trait</p>
                   </div>
                   <div className="flex flex-col bg-[#253239] border border-[#206fbf] p-2 items-center rounded-md">
                     <p className="text-custom-blue1 pb-1">Body wear</p>
-                    <p className="pb-2">{config.shirtStyle}</p>
-                    <p className="text-sm">50%</p>
-                    <p className="text-xs">have this trait</p>
+                    <p className="pb-3 text-xl">{config.shirtStyle}</p>
+                    <p className="text-xs">35% have this trait</p>
                   </div>
                   <div className="flex flex-col bg-[#253239] border border-[#206fbf] p-2 items-center rounded-md">
                     <p className="text-custom-blue1 pb-1">Head wear</p>
-                    <p className="pb-2">{config.hatStyle}</p>
-                    <p className="text-sm">50%</p>
-                    <p className="text-xs">have this trait</p>
+                    <p className="pb-3 text-xl">{config.hatStyle}</p>
+                    <p className="text-xs">22% have this trait</p>
                   </div>
                   <div className="flex flex-col bg-[#253239] border border-[#206fbf] p-2 items-center rounded-md">
                     <p className="text-custom-blue1 pb-1">Mouth</p>
-                    <p className="pb-2">{config.mouthStyle}</p>
-                    <p className="text-sm">50%</p>
-                    <p className="text-xs">have this trait</p>
+                    <p className="pb-3 text-xl">{config.mouthStyle}</p>
+                    <p className="text-xs">58% have this trait</p>
                   </div>
                 </div>
                 <h1 className="font-Poppins text-custom-white text-2xl mt-5">
@@ -352,14 +346,14 @@ export default function Profile() {
               {userInfo?.address}
             </p>
             <div className="flex items-center justify-between">
-              <h1 className="text-4xl font-Poppins py-2">{userInfo?.name }</h1>
+              <h1 className="text-4xl font-Poppins py-2">{userInfo?.name}</h1>
               <div className="flex">
                 <BsTwitter className="text-white text-2xl mr-3" />
                 <AiFillLinkedin className="text-white text-2xl mr-3" />
                 <BsInstagram className="text-white text-2xl" />
               </div>
             </div>
-            <h1 className="text-xl">Wallet balance: {profile.balance} ICCTX</h1>
+            <h1 className="text-xl">Wallet balance: {profile.balance / 100} ICCTX</h1>
             <div className="my-4 mt-6">
               <Accordion title="What can i do with my avatar?" desc={acc} />
               <Accordion title="How do i level up my avatar?" desc={acc2} />
