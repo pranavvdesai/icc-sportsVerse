@@ -19,6 +19,11 @@ function TopNav() {
                         Matches
                     </button>
                     <button
+                        onClick={() => Router.push('/Myticket')}
+                        className="hidden md:inline-flex bg-transparent text-white text-lg px-5 py-2 border border-white-500 rounded-xl">
+                        My Tickets
+                    </button>
+                    <button
                         onClick={() => Router.push('/contests')}
                         className="hidden md:inline-flex bg-transparent text-white text-lg px-5 py-2 border border-white-500 rounded-xl">
                         Contests

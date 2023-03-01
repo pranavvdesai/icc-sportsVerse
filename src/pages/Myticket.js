@@ -20,13 +20,13 @@ export default function Myticket() {
             Authorization: `Bearer ${token}`,
           },
         }
-
       );
       setTickets(res.data);
     }
     getMyTicket();
   }, []);
   console.log(tickets);
+  console.log(tickets.length);
   // const { user, connect, isLoggedIn, loading, loginWithSocial, provider } =
   //   useAuth();
 
@@ -52,8 +52,19 @@ export default function Myticket() {
         see tokens associated with poerson
       </button> */}
       <TopNav />
-      <div className="flex justify-center items-center">
-        <MyTicket />
+      <div className="grid grid-cols-4 gap-4 mx-10">
+        {tickets.length > 0 ? (
+          tickets.map((ticket) => {
+            return (
+              <MyTicket
+                key={ticket.user}
+                ticket={ticket}
+              />
+            );
+          })
+        ) : (
+          <></>
+        )}
       </div>
     </>
   );
