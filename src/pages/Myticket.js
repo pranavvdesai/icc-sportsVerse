@@ -7,6 +7,7 @@ import MyTicket from "../components/MyTicket";
 // import { contractAddress } from "../blockchain/config";
 // import { rpcURLnetwork, authArcana } from "../utils/authArcana";
 // import { useAuth } from "@arcana/auth-react";
+import axios from "axios";
 
 export default function Myticket() {
   const [tickets, setTickets] = React.useState([]);
