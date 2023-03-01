@@ -1012,15 +1012,15 @@
   optionalDependencies:
     "fsevents" "~2.3.2"
 
-chroma-js@^2.1.2:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/chroma-js/-/chroma-js-2.4.2.tgz#dffc214ed0c11fa8eefca2c36651d8e57cbfb2b0"
-  integrity sha512-U9eDw6+wt7V8z5NncY2jJfZa+hUH8XEj8FQHgFJTrUFnJfXYf4Ml4adI2vXZOjqRDpFWtYVWypDfZwnJ+HIR4A==
+"chroma-js@^2.1.2":
+  "integrity" "sha512-U9eDw6+wt7V8z5NncY2jJfZa+hUH8XEj8FQHgFJTrUFnJfXYf4Ml4adI2vXZOjqRDpFWtYVWypDfZwnJ+HIR4A=="
+  "resolved" "https://registry.npmjs.org/chroma-js/-/chroma-js-2.4.2.tgz"
+  "version" "2.4.2"
 
-client-only@0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/client-only/-/client-only-0.0.1.tgz#38bba5d403c41ab150bff64a95c85013cf73bca1"
-  integrity sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==
+"client-only@0.0.1":
+  "integrity" "sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA=="
+  "resolved" "https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz"
+  "version" "0.0.1"
 
 "color-convert@^1.9.0":
   "integrity" "sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg=="
@@ -2659,18 +2659,18 @@ client-only@0.0.1:
     "styled-components" "^5.3.5"
     "styled-tools" "^1.7.2"
 
-react-nice-avatar@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/react-nice-avatar/-/react-nice-avatar-1.3.1.tgz#5f9c0fcda0732ae7e06e49dc74b0aaa6ed538845"
-  integrity sha512-I3+sPA9J4QvWPy/7CELmJMkPYJnEDty38zzpy/Gth8oNTPtH4U/DCJHs3IRldafDGpgYR+Hkgkftc55mfoWrhQ==
+"react-nice-avatar@^1.3.1":
+  "integrity" "sha512-I3+sPA9J4QvWPy/7CELmJMkPYJnEDty38zzpy/Gth8oNTPtH4U/DCJHs3IRldafDGpgYR+Hkgkftc55mfoWrhQ=="
+  "resolved" "https://registry.npmjs.org/react-nice-avatar/-/react-nice-avatar-1.3.1.tgz"
+  "version" "1.3.1"
   dependencies:
-    chroma-js "^2.1.2"
-    prop-types "^15.7.2"
+    "chroma-js" "^2.1.2"
+    "prop-types" "^15.7.2"
 
-react@18.2.0:
-  version "18.2.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"
-  integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
+"react@*", "react@^16.0.0 || ^17 || ^18", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^18.2.0", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16.0.0", "react@>=18.2.0", "react@18.2.0":
+  "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
+  "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
+  "version" "18.2.0"
   dependencies:
     "loose-envify" "^1.1.0"
 

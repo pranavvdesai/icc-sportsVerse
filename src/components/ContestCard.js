@@ -13,9 +13,9 @@ const ContestCard = () => {
           {/* Content div-RHS */}
           <div className="flex flex-col justify-between flex-grow pl-5">
             {/* Div to display date and time on the right hand side of the card */}
-            <Link href="/sets">
+            <Link href="/fantasy">
             <div className="flex justify-between">
-              <h4 className="text-5xl font-bold">SETS</h4>
+              <h4 className="text-5xl font-bold">FANTASY</h4>
               <h5 className="text-white text-lg">
                 <span class="inline-block whitespace-nowrap rounded-[0.27rem] bg-green-500 px-[0.65em] pt-[0.35em] pb-[0.25em] text-center align-baseline text-[0.75em] font-bold leading-none text-primary-700">
                   New
