@@ -7,7 +7,15 @@ import Accordion from "../components/Accordion";
 import TopNav from "../components/TopNav";
 import axios from "axios";
 import { rpcURLnetwork, authArcana } from "../../src/utils/authArcana";
-import {BsBoxArrowUpRight} from 'react-icons/bs'
+import { BsBoxArrowUpRight } from 'react-icons/bs'
+
+const acc2 = `
+  <p><span class="text-lg mr-2">o</span>Win contests</p>
+  <p><span class="text-lg mr-2">o</span>Interacting with icc products such as ICC TV, criio, crictos </p>
+  <p><span class="text-lg mr-2">o</span>Shopping on icc store</p>
+  <p><span class="text-lg mr-2">o</span>View time on icc TV</p>
+  <p><span class="text-lg mr-2">o</span>Buying tickets</p>
+`;
 export default function Wallet() {
   const [profile, setProfile] = React.useState([]);
     const [userInfo, setUserInfo] = useState({});
@@ -91,8 +99,8 @@ export default function Wallet() {
           </div>
         </div>
         <div className="my-4 mt-6">
-          <Accordion />
-          <Accordion />
+          <Accordion title="Transactions" />
+          <Accordion title="What can i do with these tokens, how do i get additional tokens" desc={acc2} />
         </div>
       </div>
     </>
