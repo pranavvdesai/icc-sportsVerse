@@ -41,48 +41,6 @@ const MyTicket = ({ ticket }) => {
       <hr className="m-2"></hr>
       {/* </div> */}
       <div className=" w-full mx-5" />
-
-      {/* <div className="flex mt-3">
-
-                <div className="flex flex-col">
-                    <div className="my-2">
-                        <h3 className="text-white font-semibold mx-5">
-                            Date:
-                        </h3>
-
-                        <p className="text-white font-semibold mx-5">
-                            12th April 2021
-                        </p>
-                    </div>
-                    <div className="my-2">
-                        <h3 className="text-white font-semibold mx-5">
-                            Stand:
-                        </h3>
-                        <p className="text-white font-semibold mx-5">
-                            Pavilion
-                        </p>
-                    </div>
-                </div>
-                <div className="flex flex-col">
-                    <div className="my-2 mx-5">
-                        <h3 className="text-white font-semibold mx-5">
-                            Time:
-                        </h3>
-
-                        <p className="text-white font-semibold mx-5">
-                            7:00 PM
-                        </p>
-                    </div>
-                    <div className="my-2 mx-5">
-                        <h3 className="text-white font-semibold mx-5">
-                            ID:
-                        </h3>
-                        <p className="text-white font-semibold mx-5">
-                            123456789
-                        </p>
-                    </div>
-                </div>
-            </div> */}
       <div className="grid grid-cols-2 px-5 text-custom-gray mb-2">
         <div className="flex flex-col mb-2">
           <h3 className="font-Poppins text-custom-white text-lg">Date</h3>
@@ -218,6 +176,7 @@ const MyTicket = ({ ticket }) => {
         </div>
       )}
     </div>
+
   );
 };
 
