@@ -114,7 +114,7 @@ const contests = () => {
               <h1 className="font-Poppins text-custom-white text-3xl mb-2">
                 Social media contest
               </h1>
-              <p className="mb-8 text-custom-gray text-lg">Post your best moments during the match using your customised avatars AR/VR fliters and stand a chance to win free icc tickets.</p>
+              <p className="mb-8 text-custom-gray text-lg">Post your best moments during the match using your customised avatars AR/VR fliters and stand a chance to get featured on the big screeen.</p>
               
             </div>
             {/* <div className="absolute bottom-0 right-10 w-96 h-52 p-4 opacity-40">
