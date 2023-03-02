@@ -295,7 +295,7 @@ export default function Profile() {
                   {profile.balance !== undefined &&
                   profile.balance !== null &&
                   profile.balance !== NaN ? (
-                    profile.balance / 100
+                    profile.balance
                   ) : (
                     <>
                       <div
