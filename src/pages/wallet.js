@@ -213,7 +213,7 @@ export default function Wallet() {
                       {transaction.buyer}
                     </td>
                     <td className="border-b px-4 py-2 border-slate-400">
-                      {transaction.amount / 100} ICC-TX
+                      {transaction.amount } ICC-TX
                     </td>
                     <td className="border-b px-4 py-2 border-slate-400 overflow-clip overflow-ellipsis">
                       {transaction.seller}
