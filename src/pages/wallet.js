@@ -91,9 +91,9 @@ export default function Wallet() {
             </div>
             <div className="text-3xl mb-4 mt-4">
               {profile.balance !== undefined &&
-              profile.balance !== null &&
-              profile.balance !== "" &&
-              profile.balance !== NaN ? (
+                profile.balance !== null &&
+                profile.balance !== "" &&
+                profile.balance !== NaN ? (
                 profile.balance
               ) : (
                 <>
@@ -111,9 +111,9 @@ export default function Wallet() {
                 <p>Withdrawable balance</p>
                 <h1>
                   {profile.balance !== undefined &&
-                  profile.balance !== null &&
-                  profile.balance !== "" &&
-                  profile.balance !== NaN ? (
+                    profile.balance !== null &&
+                    profile.balance !== "" &&
+                    profile.balance !== NaN ? (
                     profile.balance
                   ) : (
                     <>
@@ -210,7 +210,7 @@ export default function Wallet() {
                       {transaction.buyer}
                     </td>
                     <td className="border-b px-4 py-2 border-slate-400">
-                      {transaction.amount / 100} ICC-TX
+                      {transaction.amount} ICC-TX
                     </td>
                     <td className="border-b px-4 py-2 border-slate-400 overflow-clip overflow-ellipsis">
                       {transaction.seller}
