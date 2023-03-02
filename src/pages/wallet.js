@@ -6,6 +6,7 @@ import { BsBank2 } from "react-icons/bs";
 import Accordion from "../components/Accordion";
 import TopNav from "../components/TopNav";
 import axios from "axios";
+import { useAuth } from "@arcana/auth-react";
 import { rpcURLnetwork, authArcana } from "../../src/utils/authArcana";
 import { BsBoxArrowUpRight } from "react-icons/bs";
 
@@ -28,7 +29,10 @@ export default function Wallet() {
   const handleClose = () => {
     setShow(false);
   };
-  useEffect(() => {
+
+  const { user, connect, isLoggedIn, loading, loginWithSocial, provider } = useAuth();
+  const onConnect = async () => {
+    await authArcana.init();
     authArcana.getUser().then((res) => {
       console.log("inside res");
       console.log(res);
@@ -55,7 +59,15 @@ export default function Wallet() {
       .then((res) => {
         setTransactions(res.data);
       });
-  }, []);
+  }
+
+  useEffect(() => {
+    provider.on("connect", onConnect);
+    return () => {
+      provider.removeListener("connect", onConnect);
+    };
+
+  }, [provider]);
   console.log(profile);
   console.log(transactions);
   function addToWallet() {
