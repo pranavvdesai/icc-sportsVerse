@@ -47,6 +47,7 @@ export default function Login() {
             email: info.email,
             password: info.address,
             re_password: info.address,
+            wallet_address: info.address,
           }
         );
         console.log(res.data);
@@ -56,6 +57,7 @@ export default function Login() {
             email: info.email,
             password: info.address,
             re_password: info.address,
+            wallet_address: info.address,
           }
         );
         console.log(res2.data);
