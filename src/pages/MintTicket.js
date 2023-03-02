@@ -9,25 +9,24 @@ import { useAuth } from "@arcana/auth-react";
 export default function MintTicket() {
   const router = useRouter();
   console.log(router.asPath.split("/")[1].split("?")[1]);
-  const amount = parseInt((router.asPath.split("/")[1].split("?")[1])/100);
-  console.log(amount);
-  const { user, connect, isLoggedIn, loading, loginWithSocial, provider } =
-    useAuth();
-  useEffect(() => {
-    async function MintNFT(amount) {
-      await authArcana.init();
-      const Provider = new ethers.providers.Web3Provider(provider);
-      const signer = Provider.getSigner();
+  const amount = parseInt((router.asPath.split("/")[1].split("?")[1]) / 100);
+  const { user, connect, isLoggedIn, loading, loginWithSocial, provider } = useAuth();
 
-      const icc = new ethers.Contract(contractAddress, ICC.abi, signer);
-      const res = await icc.buyTicket(amount);
-      console.log(res);
-      window.location.href = "http://localhost:3000/Myticket";
-    }
+  async function MintNFT(amount) {
+    await authArcana.init();
+    const Provider = new ethers.providers.Web3Provider(provider);
+    const signer = Provider.getSigner();
+
+    const icc = new ethers.Contract(contractAddress, ICC.abi, signer);
+    const res = await icc.buyTicket(amount);
+    console.log(res);
+    window.location.href = "http://localhost:3000/Myticket";
+  }
+  useEffect(() => {
     MintNFT(amount);
   });
 
-  
+
   return (
     <div className="text-white mx-auto mt-10">
       redirecting ....

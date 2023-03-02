@@ -39,62 +39,65 @@ export default function Myticket() {
     getMyTicket();
   }, []);
   console.log(tickets);
-  console.log(tickets.length);
-  // const { user, connect, isLoggedIn, loading, loginWithSocial, provider } =
-  //   useAuth();
-
-  // const getTokenId = async () => {
-  //   const provider = new ethers.providers.JsonRpcProvider(rpcURLnetwork);
-  //   const icc = new ethers.Contract(contractAddress, ICC.abi, provider);
-  //   const res = await icc.tokenId();
-  //   console.log(res);
-  // };
-  // const getTokenBalances = async () => {
-  //   console.log(user);
-  //   const provider = new ethers.providers.JsonRpcProvider(rpcURLnetwork);
-  //   const icc = new ethers.Contract(contractAddress, ICC.abi, provider);
-  //   const res = await icc.nftTokenBalances(user.address);
-  //   console.log(res);
-  // };
   return (
     <>
       <TopNav />
       {
         tickets.length > 0 ? (
-          <><h1 className="text-3xl text-white font-semibold mx-10 mt-10">
-            Upcoming Tickets
-          </h1><div className="grid grid-cols-4 gap-4 mx-10">
+          <>
+            <h1 className="text-3xl text-white font-semibold mx-10 mt-10">
+              Current Tickets
+            </h1>
+            <div className="grid grid-cols-4 gap-4 mx-10">
               {tickets.length > 0 ? (
                 tickets.map((ticket) => {
                   return (
                     <MyTicket
                       key={ticket.user}
-                      ticket={ticket} />
+                      ticket={ticket}
+                      sell={false}
+                      transfer={true}
+                    />
                   );
                 })
               ) : (
                 <></>
               )}
-            </div><h1 className="text-3xl text-white font-semibold mx-10 mt-10">
-              Past Tickets
-            </h1><div className="grid grid-cols-4 gap-4 mx-10">
-              {pastTickets.length > 0 ? (
-                pastTickets.map((ticket) => {
-                  return (
-                    <MyTicket
-                      key={ticket.user}
-                      ticket={ticket} />
-                  );
-                })
-              ) : (
-                <></>
-              )}
-            </div></>
+            </div>
+          </>
         ) : (
           <h1 className="text-3xl text-white font-bold mx-12 mt-5">
-            No Tickets purchased
+            No Current Tickets
           </h1>
         )}
+      {pastTickets.length > 0 ? (
+        <>
+          <h1 className="text-3xl text-white font-semibold mx-10 mt-10">
+            Past Tickets
+          </h1>
+          <div className="grid grid-cols-4 gap-4 mx-10">
+            {pastTickets.length > 0 ? (
+              pastTickets.map((ticket) => {
+                return (
+                  <MyTicket
+                    key={ticket.user}
+                    ticket={ticket}
+                    sell={true}
+                    transfer={false}
+                  />
+                );
+              })
+            ) : (
+              <></>
+            )}
+          </div>
+        </>
+      ) : (
+        <h1 className="text-3xl text-white font-bold mx-12 mt-5">
+          No Past Tickets
+        </h1>
+      )}
+
     </>
   );
 }

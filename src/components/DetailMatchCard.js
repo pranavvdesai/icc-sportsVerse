@@ -10,22 +10,24 @@ const DetailMatchCard = ({ matchId }) => {
   const [tier, setTier] = useState('')
   const [match, setMatch] = useState({})
   const [time, setTime] = useState(0)
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    async function getMatch() {
-      const res = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/matches/${matchId}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      )
-      console.log(res.data)
-      setMatch(res.data)
-      // remove seconds from time
-      setTime(res.data.time.split(":").slice(0, 2).join(":"))
 
-    }
+
+  async function getMatch() {
+    const token = localStorage.getItem("token");
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/matches/${matchId}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
+    console.log(res.data)
+    setMatch(res.data)
+    // remove seconds from time
+    setTime(res.data.time.split(":").slice(0, 2).join(":"))
+
+  }
+  useEffect(() => {
     getMatch();
   }, []);
 
