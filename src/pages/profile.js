@@ -16,7 +16,7 @@ const acc = `
                     <p class="text-[#9a9999] text-base">
                       Your avatar acts as a entry point to these exclusive events. A few lucky winners among these can get a chance to:
                     </p>
-                    <div class="grid grid-cols-3 gap-4 mt-4">
+                    <div class="grid grid-cols-3 gap-6 mt-4">
                       <div class="relative custom-gray shadow-lg rounded-lg  overflow-hidden">
                         <div class=" h-full w-full absolute bottom-0 opacity-40">
                           <Image
@@ -29,7 +29,7 @@ const acc = `
                         </div>
                         <div class="relative py-8 px-5">
                           <h3 class="text-md font-extrabold text-indigo-50 leading-snug mb-2">
-                            Meet cricketers
+                            Meet and greet cricketers
                           </h3>
                         </div>
                         <div class="text-xs text-custom-gray p-2">
@@ -49,7 +49,7 @@ const acc = `
                         </div>
                         <div class="relative py-8 px-5">
                           <h3 class="text-md font-extrabold text-indigo-50 leading-snug mb-2">
-                            Get a signed ball
+                            Get a signed ball from captain
                           </h3>
                         </div>
                         <div class="text-xs text-custom-gray p-2">

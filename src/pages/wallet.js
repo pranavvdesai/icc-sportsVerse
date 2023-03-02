@@ -7,7 +7,7 @@ import Accordion from "../components/Accordion";
 import TopNav from "../components/TopNav";
 import axios from "axios";
 import { rpcURLnetwork, authArcana } from "../../src/utils/authArcana";
-import { BsBoxArrowUpRight } from 'react-icons/bs'
+import { BsBoxArrowUpRight } from "react-icons/bs";
 
 const acc2 = `
   <p><span class="text-lg mr-2">o</span>Win contests</p>
@@ -18,10 +18,10 @@ const acc2 = `
 `;
 export default function Wallet() {
   const [profile, setProfile] = React.useState([]);
-    const [userInfo, setUserInfo] = useState({});
+  const [userInfo, setUserInfo] = useState({});
+  const [transactions, setTransactions] = useState([]);
 
   useEffect(() => {
-
     authArcana.getUser().then((res) => {
       console.log("inside res");
       console.log(res);
@@ -36,8 +36,21 @@ export default function Wallet() {
       .then((res) => {
         setProfile(res.data);
       });
+    axios
+      .get(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/razorpay/get-transactions/`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      )
+      .then((res) => {
+        setTransactions(res.data);
+      });
   }, []);
   console.log(profile);
+  console.log(transactions);
   return (
     <>
       <TopNav />
@@ -54,7 +67,7 @@ export default function Wallet() {
               >
                 {userInfo?.address}
               </a>
-              <BsBoxArrowUpRight className="ml-1 text-custom-blue1 text-sm"/>
+              <BsBoxArrowUpRight className="ml-1 text-custom-blue1 text-sm" />
             </div>
             <div className="text-3xl mb-4 mt-4">
               {profile.balance}{" "}
@@ -99,8 +112,73 @@ export default function Wallet() {
           </div>
         </div>
         <div className="my-4 mt-6">
-          <Accordion title="Transactions" />
-          <Accordion title="What can i do with these tokens, how do i get additional tokens" desc={acc2} />
+          <h1 className="text-custom-white font-Poppins text-2xl">
+            Transactions
+          </h1>
+          {transactions.length > 0 ? (
+            <table className="table-auto w-full mt-4 mb-8">
+              <thead>
+                <tr className="text-custom-white bg-[#206fbf] rounded-md">
+                  <th className="text-left px-4 py-2 border-b border-slate-400">
+                    Transaction Hash
+                  </th>
+                  <th className="text-left px-4 py-2 border-b border-slate-400">
+                    Note
+                  </th>
+                  <th className="text-left px-4 py-2 border-b border-slate-400">
+                    Time
+                  </th>
+                  <th className="text-left px-4 py-2 border-b border-slate-400">
+                    Buyer
+                  </th>
+                  <th className="text-left px-4 py-2 border-b border-slate-400">
+                    Amount
+                  </th>
+                  <th className="text-leftpx-4 py-2 border-b border-slate-400">
+                    Seller
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {transactions.map((transaction) => (
+                  <tr
+                    key={transaction}
+                    className="text-custom-white custom-gray rounded-md"
+                  >
+                    <td className=" border-b border-slate-400 px-4 py-2 overflow-clip overflow-ellipsis">
+                      {transaction.transaction_hash}
+                    </td>
+                    <td className="border-b border-slate-400 px-4 py-2">
+                      <p className="bg-white text-black w-fit py-1 rounded-md px-4 ">
+                        {transaction.note}
+                      </p>
+                    </td>
+                    <td className="border-b border-slate-400 py-2 px-4">
+                      {transaction.timestamp}
+                    </td>
+                    <td className="border-b px-4 py-2 border-slate-400">
+                      {transaction.transaction_hash}
+                    </td>
+                    <td className="border-b px-4 py-2 border-slate-400">
+                      {transaction.amount} ICC-TX
+                    </td>
+                    <td className="border-b px-4 py-2 border-slate-400">
+                      {transaction.transaction_hash}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            <div className="text-custom-white text-xl mt-4 mb-6">
+              No transactions yet
+            </div>
+          )}
+
+          <Accordion
+            title="What can i do with these tokens, how do i get additional tokens"
+            desc={acc2}
+          />
         </div>
       </div>
     </>
