@@ -20,7 +20,7 @@ export default function MintTicket() {
     const icc = new ethers.Contract(contractAddress, ICC.abi, signer);
     const res = await icc.buyTicket(amount);
     console.log(res);
-    window.location.href = "http://localhost:3000/Myticket";
+    window.location.href = "https://icc-cricverse.vercel.app/Myticket";
   }
   useEffect(() => {
     MintNFT(amount);
