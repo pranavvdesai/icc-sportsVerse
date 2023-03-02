@@ -58,49 +58,43 @@ export default function Myticket() {
   // };
   return (
     <>
-      {/* <button onClick={getTokenId} className="bg-white">
-        See tokenId count
-      </button>
-      <button onClick={getTokenBalances} className="bg-white">
-        see tokens associated with poerson
-      </button> */}
       <TopNav />
-
-      {/* Tab Navigation */}
-      <h1 className="text-3xl text-white font-semibold mx-10 mt-10">
-        Upcoming Tickets
-      </h1>
-      <div className="grid grid-cols-4 gap-4 mx-10">
-        {tickets.length > 0 ? (
-          tickets.map((ticket) => {
-            return (
-              <MyTicket
-                key={ticket.user}
-                ticket={ticket}
-              />
-            );
-          })
+      {
+        tickets.length > 0 ? (
+          <><h1 className="text-3xl text-white font-semibold mx-10 mt-10">
+            Upcoming Tickets
+          </h1><div className="grid grid-cols-4 gap-4 mx-10">
+              {tickets.length > 0 ? (
+                tickets.map((ticket) => {
+                  return (
+                    <MyTicket
+                      key={ticket.user}
+                      ticket={ticket} />
+                  );
+                })
+              ) : (
+                <></>
+              )}
+            </div><h1 className="text-3xl text-white font-semibold mx-10 mt-10">
+              Past Tickets
+            </h1><div className="grid grid-cols-4 gap-4 mx-10">
+              {pastTickets.length > 0 ? (
+                pastTickets.map((ticket) => {
+                  return (
+                    <MyTicket
+                      key={ticket.user}
+                      ticket={ticket} />
+                  );
+                })
+              ) : (
+                <></>
+              )}
+            </div></>
         ) : (
-          <></>
+          <h1 className="text-3xl text-white font-bold mx-12 mt-5">
+            No Tickets purchased
+          </h1>
         )}
-      </div>
-      <h1 className="text-3xl text-white font-semibold mx-10 mt-10">
-        Past Tickets
-      </h1>
-      <div className="grid grid-cols-4 gap-4 mx-10">
-        {pastTickets.length > 0 ? (
-          pastTickets.map((ticket) => {
-            return (
-              <MyTicket
-                key={ticket.user}
-                ticket={ticket}
-              />
-            );
-          })
-        ) : (
-          <></>
-        )}
-      </div>
     </>
   );
 }

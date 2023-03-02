@@ -353,7 +353,17 @@ export default function Profile() {
                 <BsInstagram className="text-white text-2xl" />
               </div>
             </div>
-            <h1 className="text-xl">Wallet balance: {profile.balance / 100} ICCTX</h1>
+            <h1 className="text-xl">Wallet balance: {
+
+              profile.balance !== undefined && profile.balance !== null && profile.balance !== NaN ? profile.balance / 100 :
+                <>
+                  <div
+                    className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                    role="status">
+
+                  </div>
+                </>
+            } ICCTXN </h1>
             <div className="my-4 mt-6">
               <Accordion title="What can i do with my avatar?" desc={acc} />
               <Accordion title="How do i level up my avatar?" desc={acc2} />

@@ -83,7 +83,17 @@ export default function Wallet() {
             </div>
             <div className="text-3xl mb-4 mt-4">
               {
-                (profile.balance) / 100
+                profile.balance !== undefined && profile.balance !== null && profile.balance !== "" && profile.balance !== NaN ? (
+                  (profile.balance) / 100
+                ) :
+                  <>
+                    <div
+                      className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                      role="status">
+
+                    </div>
+                  </>
+
               }{" "}
               <span className="text-custom-blue1">ICC Tokens</span>
             </div>
@@ -91,9 +101,18 @@ export default function Wallet() {
             <div className="flex flex-col mb-6">
               <div className="flex text-white justify-between">
                 <p>Withdrawable balance</p>
-                <h1>{
-                  (profile.balance) / 100
-                }</h1>
+                <h1>
+                  {profile.balance !== undefined && profile.balance !== null && profile.balance !== "" && profile.balance !== NaN ? (
+                    (profile.balance) / 100
+                  ) :
+                    <>
+                      <div
+                        className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                        role="status">
+                      </div>
+                    </>
+                  }
+                </h1>
               </div>
               <div className="flex text-[#9a9999] text-base justify-between">
                 <p>Rewards balance</p>
