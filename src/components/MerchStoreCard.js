@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import ModalConfirm from './ModalConfirm'
 import Image from 'next/image'
 const MerchStoreCard = ({
-    walletBalance
+    walletBalance,
+    item
 }) => {
     const [openModal, setOpenModal] = useState(false)
+    console.log(item);
     return (
         <>
             <div className="my-10 w-[400px] mx-5 border-2 border-gray-600 rounded-2xl shadow-lg bg-gray-800 cursor-pointer hover:shadow-lg hover:bg-gray-700 transition duration-500 ease-in">
@@ -13,12 +15,13 @@ const MerchStoreCard = ({
                 <Image
                     width={500}
                     height={100}
-                    className="rounded-t-lg h-64" src="https://imgnew.outlookindia.com/public/uploads/articles/2020/11/2/MPL-1.png" alt="product image" />
+                    className="rounded-t-lg h-64" src={item.image}
+                    alt="product image" />
                 {/* </div> */}
                 <div className="px-5 pb-5 mt-3 mx-2">
                     {/* <a href="#"> */}
                     <h3 className="text-gray-900 font-semibold text-xl tracking-tight dark:text-white">
-                        India jersey(ltd. edition)
+                        {item.title}
                     </h3>
                     {/* </a> */}
                     <div className="flex items-center mt-2.5 mb-5">
@@ -56,7 +59,10 @@ const MerchStoreCard = ({
                     </div>
                     <div className="flex items-center justify-between">
                         <span className="text-xl font-semibold text-gray-900 dark:text-white">
-                            50 ICC tokens</span>
+                            {
+                                item.price
+                            } ICCTXN
+                        </span>
                         <button
                             onClick=
                             {() => setOpenModal(true)}
@@ -64,11 +70,13 @@ const MerchStoreCard = ({
                             Buy Now
                         </button>
                         {
-                            openModal && (
+                            openModal &&
+                            (
                                 <ModalConfirm
                                     walletBalance={walletBalance}
                                     open={openModal}
                                     setOpen={setOpenModal}
+                                    amount={item.price}
                                 />
                             )
                         }

@@ -4,14 +4,15 @@ import React from 'react'
 const ModalConfirm = ({
     walletBalance,
     open,
-    setOpen
+    setOpen,
+    amount
 }) => {
     console.log(walletBalance);
     const handleBuyMerch = () => {
         console.log("Buy Merch");
         axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/razorpay/buy/`, {
-            amount: 100,
-            note: "test",
+            amount: amount,
+            note: "merchandise",
             seller: 2
         },
             {
