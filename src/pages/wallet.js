@@ -38,7 +38,7 @@ export default function Wallet() {
       console.log(res);
       setUserInfo(res);
     });
-    axios
+    await axios
       .get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/me/profile`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -47,7 +47,7 @@ export default function Wallet() {
       .then((res) => {
         setProfile(res.data);
       });
-    axios
+    await axios
       .get(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/razorpay/get-transactions/`,
         {
@@ -115,7 +115,7 @@ export default function Wallet() {
                 <p>Withdrawable balance</p>
                 <h1>
                   {profile.balance !== undefined && profile.balance !== null && profile.balance !== "" && profile.balance !== NaN ? (
-                    (profile.balance) / 100
+                    (profile.balance)
                   ) :
                     <>
                       <div
