@@ -11,11 +11,10 @@ import { rpcURLnetwork, authArcana } from "../../src/utils/authArcana";
 import { BsBoxArrowUpRight } from "react-icons/bs";
 
 const acc2 = `
-  <p><span class="text-lg mr-2">o</span>Win contests</p>
-  <p><span class="text-lg mr-2">o</span>Interacting with icc products such as ICC TV, criio, crictos </p>
-  <p><span class="text-lg mr-2">o</span>Shopping on icc store</p>
-  <p><span class="text-lg mr-2">o</span>View time on icc TV</p>
-  <p><span class="text-lg mr-2">o</span>Buying tickets</p>
+  <p><span class="text-lg mr-2">o</span>Shopping</p>
+  <p><span class="text-lg mr-2">o</span>Participate in contests, win and get tokens</p>
+  <p><span class="text-lg mr-2">o</span>Buy tickets</p>
+  <p><span class="text-lg mr-2">o</span>Get discounts on icc products</p>
 `;
 export default function Wallet() {
   const [profile, setProfile] = React.useState([]);
@@ -90,19 +89,19 @@ export default function Wallet() {
               <BsBoxArrowUpRight className="ml-1 text-custom-blue1 text-sm" />
             </div>
             <div className="text-3xl mb-4 mt-4">
-              {
-                profile.balance !== undefined && profile.balance !== null && profile.balance !== "" && profile.balance !== NaN ? (
-                  (profile.balance)
-                ) :
-                  <>
-                    <div
-                      className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
-                      role="status">
-
-                    </div>
-                  </>
-
-              }{" "}
+              {profile.balance !== undefined &&
+              profile.balance !== null &&
+              profile.balance !== "" &&
+              profile.balance !== NaN ? (
+                profile.balance
+              ) : (
+                <>
+                  <div
+                    className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                    role="status"
+                  ></div>
+                </>
+              )}{" "}
               <span className="text-custom-blue1">ICC Tokens</span>
             </div>
             <hr className="my-2 custom-gray"></hr>
@@ -110,16 +109,19 @@ export default function Wallet() {
               <div className="flex text-white justify-between">
                 <p>Withdrawable balance</p>
                 <h1>
-                  {profile.balance !== undefined && profile.balance !== null && profile.balance !== "" && profile.balance !== NaN ? (
-                    (profile.balance)
-                  ) :
+                  {profile.balance !== undefined &&
+                  profile.balance !== null &&
+                  profile.balance !== "" &&
+                  profile.balance !== NaN ? (
+                    profile.balance
+                  ) : (
                     <>
                       <div
                         className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
-                        role="status">
-                      </div>
+                        role="status"
+                      ></div>
                     </>
-                  }
+                  )}
                 </h1>
               </div>
               <div className="flex text-[#9a9999] text-base justify-between">
@@ -162,7 +164,7 @@ export default function Wallet() {
             Transactions
           </h1>
           {transactions.length > 0 ? (
-            <table className="table-auto w-full mt-4 mb-8">
+            <table className="table-fixed w-full mt-4 mb-8">
               <thead>
                 <tr className="text-custom-white bg-[#206fbf] rounded-md">
                   <th className="text-left px-4 py-2 border-b border-slate-400">
@@ -201,19 +203,15 @@ export default function Wallet() {
                     </td>
                     <td className="border-b border-slate-400 py-2 px-4">
                       {/* Convert the timestamp to date and time */}
-                      {
-                        transaction.timestamp
-                      }
+                      {transaction.timestamp}
                     </td>
-                    <td className="border-b px-4 py-2 border-slate-400">
+                    <td className="border-b px-4 py-2 border-slate-400 overflow-clip overflow-ellipsis">
                       {transaction.buyer}
                     </td>
                     <td className="border-b px-4 py-2 border-slate-400">
-                      {
-                        (transaction.amount) / 100
-                      } ICC-TX
+                      {transaction.amount / 100} ICC-TX
                     </td>
-                    <td className="border-b px-4 py-2 border-slate-400">
+                    <td className="border-b px-4 py-2 border-slate-400 overflow-clip overflow-ellipsis">
                       {transaction.seller}
                     </td>
                   </tr>
@@ -255,7 +253,9 @@ export default function Wallet() {
                   </button>
                 </div>
                 <div className=" mx-10 justify-center align-middle">
-                  <h1 className="font-Poppins text-2xl text-custom-white">Enter Amount</h1>
+                  <h1 className="font-Poppins text-2xl text-custom-white">
+                    Enter Amount
+                  </h1>
                   <input
                     type="number"
                     className="w-full h-12 rounded-md mt-4 text-black p-2"

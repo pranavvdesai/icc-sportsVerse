@@ -11,13 +11,11 @@ const contests = () => {
         PLAY
       </div>
       <div className="text-xl bold text-custom-gray mx-10 ">
-        Own moments and player cards to experience cricket like never before.
-        Submit your sets to win cash rewards and other goodies in the world’s
-        best cricket strategy game!
+        Play different contests, earn tokens and increase your avatar level.
       </div>
       <div className=" mt-10 text-custom-white mx-10">
         <div className="grid grid-cols-3 gap-4">
-          <Link href="/leagues">
+          <Link href="/fantasy">
             <div className="relative custom-gray rounded-md border border-slate-500 cursor-pointer">
               <div className="p-4">
                 <div className="bg-green-200 border-green-500 rounded-md p-1 text-black w-fit px-2 mb-4">
@@ -90,7 +88,7 @@ const contests = () => {
                 Free to play
               </div>
               <h1 className="font-Poppins text-custom-white text-3xl mb-10">
-                Social media contest
+                Avatar contest
               </h1>
               <p>REWARDS</p>
               <p>1000 ICTX + 2 Avatar lvl</p>

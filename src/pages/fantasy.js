@@ -35,7 +35,7 @@ const fantasy = () => {
     const submitChanges = () => {
         if (cartItems.length > 0) {
             axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/me/participate-contest`, {
-                reduce_amount: 10,
+                reduce_amount: -10,
             },
                 {
                     headers: {
@@ -44,7 +44,7 @@ const fantasy = () => {
                 })
                 .then((res) => {
                     console.log(res)
-                    alert('You have won 20 ICCTXN in this contest')
+                    alert('You have won 10 ICCTXN in this contest')
                 })
         }
     }
