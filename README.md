@@ -2,6 +2,9 @@
 ------------
 ###### Team Name - Bits Smashers
 ###### Track - FinTech
+
+Live url - https://icc-cricverse.vercel.app/
+
 ## Problem Statement
 There is a need for a better mechanism aimed towards keeping fan experience at the center and thereby encouraging more active participation from fans during cricket matches.
 
