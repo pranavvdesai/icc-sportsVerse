@@ -27,7 +27,7 @@ const contests = () => {
                   Fantasy
                 </h1>
                 <p>REWARDS</p>
-                <p>200 ICTX</p>
+                <p>200 ICTX + 3 Avatar lvl</p>
               </div>
               <div className="absolute bottom-10 right-10 w-32 h-32 p-4 opacity-80">
                 <Image
@@ -49,7 +49,7 @@ const contests = () => {
                 Predict winner
               </h1>
               <p>REWARDS</p>
-              <p>20 ICTX</p>
+              <p>20 ICTX + 1 Avatar lvl</p>
             </div>
             <div className="absolute bottom-6 right-6 w-40 h-40 p-4 opacity-80">
               <Image
@@ -71,7 +71,7 @@ const contests = () => {
                 Vote Now
               </h1>
               <p>REWARDS</p>
-              <p>1000 ICTX</p>
+              <p>1000 ICTX + 2 Avatar lvl</p>
             </div>
             <div className="absolute bottom-5 right-10 w-28 h-36 p-4 opacity-80">
               <Image
@@ -93,7 +93,7 @@ const contests = () => {
                 Social media contest
               </h1>
               <p>REWARDS</p>
-              <p>1000 ICTX</p>
+              <p>1000 ICTX + 2 Avatar lvl</p>
             </div>
             {/* <div className="absolute bottom-5 right-10 w-28 h-36 p-4 opacity-80">
               <Image
@@ -111,21 +111,21 @@ const contests = () => {
               <div className="bg-green-200 border-green-500 rounded-md p-1 text-black w-fit px-2 mb-4">
                 Free to play
               </div>
-              <h1 className="font-Poppins text-custom-white text-3xl mb-10">
+              <h1 className="font-Poppins text-custom-white text-3xl mb-2">
                 Social media contest
               </h1>
-              <p>REWARDS</p>
-              <p>1000 ICTX</p>
+              <p className="mb-8 text-custom-gray text-lg">Post your best moments during the match using your customised avatars AR/VR fliters and stand a chance to win free icc tickets.</p>
+              
             </div>
-            <div className="absolute bottom-5 right-10 w-28 h-36 p-4 opacity-80">
+            {/* <div className="absolute bottom-0 right-10 w-96 h-52 p-4 opacity-40">
               <Image
-                src="/nets.svg"
+                src="/arvrimg.png"
                 layout="fill"
                 objectFit="cover"
                 className="rounded-md "
                 alt="profile"
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
