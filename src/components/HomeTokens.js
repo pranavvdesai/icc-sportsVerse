@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 export default function HomeTokens() {
   return (
-    <div className="grid grid-cols-2 mt-10">
+    <div className="grid grid-cols-2 mt-10 relative">
       <div className=" font-Poppins text-custom-white ">
         <h1 className=" text-2xl mb-3">The All new ICC-TX Tokens are here</h1>
         <div className=" relative flex h-40 w-full rounded-md items-center mr-10">
@@ -47,9 +47,9 @@ export default function HomeTokens() {
           </div>
         </div>
       </div>
-      <div className="relative h-96 w-full ml-10">
+      <div className="relative h-96 ml-10">
         <Image
-          src="/img2.jpg"
+          src="/btc.png"
           layout="fill"
           objectFit="cover"
           className="rounded-md "
