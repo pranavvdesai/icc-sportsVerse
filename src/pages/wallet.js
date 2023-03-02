@@ -62,12 +62,8 @@ export default function Wallet() {
   }
 
   useEffect(() => {
-    provider.on("connect", onConnect);
-    return () => {
-      provider.removeListener("connect", onConnect);
-    };
-
-  }, [provider]);
+    onConnect();
+  }, []);
   console.log(profile);
   console.log(transactions);
   function addToWallet() {
@@ -96,7 +92,7 @@ export default function Wallet() {
             <div className="text-3xl mb-4 mt-4">
               {
                 profile.balance !== undefined && profile.balance !== null && profile.balance !== "" && profile.balance !== NaN ? (
-                  (profile.balance) / 100
+                  (profile.balance)
                 ) :
                   <>
                     <div
