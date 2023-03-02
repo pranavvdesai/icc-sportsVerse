@@ -44,7 +44,7 @@ const fantasy = () => {
                 })
                 .then((res) => {
                     console.log(res)
-                    alert('You have won 20 ICCTXN in this contest')
+                    alert('You have won 10 ICCTXN in this contest')
                 })
         }
     }
