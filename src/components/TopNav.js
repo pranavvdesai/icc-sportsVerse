@@ -14,7 +14,7 @@ function TopNav() {
 
 
                         < div className="flex items-center space-x-2" >
-                            <h1 className="text-3xl font-bold text-white">ICC App</h1>
+                            <h1 className="text-3xl font-bold text-white">CricVerse</h1>
                         </div >
                     </div >
                 </Link>
