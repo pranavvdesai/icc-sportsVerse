@@ -9,6 +9,7 @@ const DetailMatchCard = ({ matchId }) => {
   const [noOfTickets, setNoOfTickets] = useState(0)
   const [tier, setTier] = useState('')
   const [match, setMatch] = useState({})
+  const [time, setTime] = useState(0)
   useEffect(() => {
     const token = localStorage.getItem("token");
     async function getMatch() {
@@ -21,6 +22,8 @@ const DetailMatchCard = ({ matchId }) => {
       )
       console.log(res.data)
       setMatch(res.data)
+      // remove seconds from time
+      setTime(res.data.time.split(":").slice(0, 2).join(":"))
 
     }
     getMatch();
@@ -48,13 +51,14 @@ const DetailMatchCard = ({ matchId }) => {
 
   return (
     <>
-      <div className="py-3 pr-5 border-2 border-slate-700 rounded-xl m-5 custom-gray">
+      <div className="py-3 pr-5 border-2 border-slate-700 rounded-xl m-5 custom-gray shadow-2xl">
         <div className="flex flex-col justify-between flex-grow pl-5">
           <div className="flex justify-between">
             <h4 className="text-xl font-bold text-white">{match.venue}</h4>
           </div>
           <div className="border-b w-full pt-2" />
           {/* Team div */}
+
           <div className="flex mt-6">
             <div className="flex flex-grow flex-col mt-3 px-5">
               <Image src={match.home_team_logo} width={70} height={70} />
@@ -68,8 +72,8 @@ const DetailMatchCard = ({ matchId }) => {
               <h1 className="text-xl -mx-2 text-white font-semibold mt-8">
                 {match.title}
               </h1>
-              <h1 className="text-xl -mx-8 text-gray-400 font-semibold mt-5">
-                {match.time} IST
+              <h1 className="text-xl text-gray-400 font-semibold mt-5">
+                {time} IST
               </h1>
             </div>
 
@@ -173,10 +177,10 @@ const DetailMatchCard = ({ matchId }) => {
               {tier === "Gold"
                 ? 1000
                 : tier === "Silver"
-                ? 500
-                : tier === "Bronze"
-                ? 100
-                : 0}{" "}
+                  ? 500
+                  : tier === "Bronze"
+                    ? 100
+                    : 0}{" "}
               * {noOfTickets > 0 ? noOfTickets : 0}
             </h1>
           </div>
@@ -187,10 +191,10 @@ const DetailMatchCard = ({ matchId }) => {
                 ? tier === "Gold"
                   ? 1000 * noOfTickets
                   : tier === "Silver"
-                  ? 500 * noOfTickets
-                  : tier === "Bronze"
-                  ? 100 * noOfTickets
-                  : 0
+                    ? 500 * noOfTickets
+                    : tier === "Bronze"
+                      ? 100 * noOfTickets
+                      : 0
                 : 0}
             </h1>
           </div>
@@ -210,10 +214,10 @@ const DetailMatchCard = ({ matchId }) => {
                 ? tier === "Gold"
                   ? 1000 * noOfTickets + 0.87 + 12
                   : tier === "Silver"
-                  ? 500 * noOfTickets + 0.87 + 12
-                  : tier === "Bronze"
-                  ? 100 * noOfTickets + 0.87 + 12
-                  : 0
+                    ? 500 * noOfTickets + 0.87 + 12
+                    : tier === "Bronze"
+                      ? 100 * noOfTickets + 0.87 + 12
+                      : 0
                 : 0}
             </h1>
           </div>
@@ -224,10 +228,10 @@ const DetailMatchCard = ({ matchId }) => {
                 ? tier === "Gold"
                   ? 1000 * noOfTickets + 0.87 + 12
                   : tier === "Silver"
-                  ? 500 * noOfTickets + 0.87 + 12
-                  : tier === "Bronze"
-                  ? 100 * noOfTickets + 0.87 + 12
-                  : 0
+                    ? 500 * noOfTickets + 0.87 + 12
+                    : tier === "Bronze"
+                      ? 100 * noOfTickets + 0.87 + 12
+                      : 0
                 : 0}{" "}
               ICTX
             </h1>

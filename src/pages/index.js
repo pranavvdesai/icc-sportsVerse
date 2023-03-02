@@ -1,8 +1,6 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import Router from "next/router";
 import Head from "next/head";
-import Web3Modal, { providers } from "web3modal";
-import { ethers } from "ethers";
 // import * as PushAPI from "@pushprotocol/restapi";
 import { useAuth } from "@arcana/auth-react";
 import { rpcURLnetwork, authArcana } from "../utils/authArcana";
@@ -10,11 +8,9 @@ import axios from "axios";
 
 
 export default function Login() {
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const auth = useAuth();
-  const { user, connect, isLoggedIn, loading, loginWithSocial, provider } =
-    useAuth();
+  const { user, connect, isLoggedIn, loading, loginWithSocial, provider } = useAuth();
+  const [loader, setLoader] = useState(false);
+
   const onConnectClick = async () => {
     try {
       await connect();
@@ -22,7 +18,9 @@ export default function Login() {
       console.log(e);
     }
   };
+
   const onConnect = async () => {
+    setLoader(true);
     console.log("connected");
     await authArcana.init();
     const info = await authArcana.getUser();
@@ -38,9 +36,8 @@ export default function Login() {
       );
       console.log(res.data);
       localStorage.setItem("token", res.data.access);
-      setTimeout(() => {
-        Router.push("/home");
-      }, 2000);
+      setLoader(false);
+      Router.push("/home");
     }
     catch (e) {
       if (e.response.data.detail === "No active account found with the given credentials") {
@@ -50,6 +47,7 @@ export default function Login() {
             email: info.email,
             password: info.address,
             re_password: info.address,
+            wallet_address: info.address,
           }
         );
         console.log(res.data);
@@ -59,19 +57,19 @@ export default function Login() {
             email: info.email,
             password: info.address,
             re_password: info.address,
+            wallet_address: info.address,
           }
         );
         console.log(res2.data);
         if (res2.data.access) {
           localStorage.setItem("token", res2.data.access);
-          setTimeout(() => {
-            Router.push("/home");
-          }, 2000);
+          setLoader(false);
+          Router.push("/home");
         }
       }
     }
   };
-  React.useEffect(() => {
+  useEffect(() => {
     provider.on("connect", onConnect);
     return () => {
       provider.removeListener("connect", onConnect);
@@ -88,27 +86,26 @@ export default function Login() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
-        <div className="w-full p-6 m-auto bg-[#1a1e27] text-white rounded-md shadow-md lg:max-w-xl">
-          <h1 className="text-3xl font-semibold text-center text-[#0284c7]">
-            Sign in
+        <div className="w-full p-6 m-auto bg-black text-white rounded-md shadow-md lg:max-w-xl">
+          <h1 className="text-3xl font-semibold text-center text-white">
+            Welcome To ICC
           </h1>
           <div className="flex justify-center items-center mt-5">
             <button
               onClick={onConnectClick}
               className="bg-sky-500 text-white rounded-md shadow-md p-2 mt-5 w-1/2 flex items-center justify-center"
             >
-              Connect
+              Sign In
             </button>
           </div>
-
-          <p className="mt-8 text-xs font-light text-center text-white">
-            {" "}
-            Don&apos;t have an account?{" "}
-            <a href="#" className="font-medium text-[#0284c7] hover:underline">
-              Sign up
-            </a>
-          </p>
         </div>
+        {/* Show Loader */}
+        {loader && (
+          <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
+            <div className="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4">
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

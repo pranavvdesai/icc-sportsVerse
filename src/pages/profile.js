@@ -164,7 +164,7 @@ export default function Profile() {
   //     }
   //   );
   // }
- 
+
   console.log(profile);
   console.log(userInfo);
   useEffect(() => {
@@ -353,7 +353,7 @@ export default function Profile() {
                 <BsInstagram className="text-white text-2xl" />
               </div>
             </div>
-            <h1 className="text-xl">Wallet balance: {profile.balance} ICCTX</h1>
+            <h1 className="text-xl">Wallet balance: {profile.balance / 100} ICCTX</h1>
             <div className="my-4 mt-6">
               <Accordion title="What can i do with my avatar?" desc={acc} />
               <Accordion title="How do i level up my avatar?" desc={acc2} />
