@@ -61,14 +61,11 @@ export default function Wallet() {
   }
 
   useEffect(() => {
-    provider.on("connect", onConnect);
-    return () => {
-      provider.removeListener("connect", onConnect);
-    };
-
-  }, [provider]);
+    onConnect();
+  }, []);
   console.log(profile);
   console.log(transactions);
+  
   function addToWallet() {
     window.location.href = `${process.env.NEXT_PUBLIC_BACKEND_URL
       }/razorpay/convert?amount=${price_now * 100}&user=${profile.user}`;
@@ -94,9 +91,9 @@ export default function Wallet() {
             </div>
             <div className="text-3xl mb-4 mt-4">
               {profile.balance !== undefined &&
-              profile.balance !== null &&
-              profile.balance !== "" &&
-              profile.balance !== NaN ? (
+                profile.balance !== null &&
+                profile.balance !== "" &&
+                profile.balance !== NaN ? (
                 profile.balance
               ) : (
                 <>
@@ -114,9 +111,9 @@ export default function Wallet() {
                 <p>Withdrawable balance</p>
                 <h1>
                   {profile.balance !== undefined &&
-                  profile.balance !== null &&
-                  profile.balance !== "" &&
-                  profile.balance !== NaN ? (
+                    profile.balance !== null &&
+                    profile.balance !== "" &&
+                    profile.balance !== NaN ? (
                     profile.balance
                   ) : (
                     <>
@@ -213,7 +210,7 @@ export default function Wallet() {
                       {transaction.buyer}
                     </td>
                     <td className="border-b px-4 py-2 border-slate-400">
-                      {transaction.amount } ICC-TX
+                      {transaction.amount} ICC-TX
                     </td>
                     <td className="border-b px-4 py-2 border-slate-400 overflow-clip overflow-ellipsis">
                       {transaction.seller}
