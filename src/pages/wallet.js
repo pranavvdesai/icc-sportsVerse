@@ -65,6 +65,7 @@ export default function Wallet() {
   }, []);
   console.log(profile);
   console.log(transactions);
+  
   function addToWallet() {
     window.location.href = `${process.env.NEXT_PUBLIC_BACKEND_URL
       }/razorpay/convert?amount=${price_now * 100}&user=${profile.user}`;
