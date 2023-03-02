@@ -65,6 +65,7 @@ original price.
                       rare as you advance. The more rare your avatar's
                       attributes are, the more rare your avatar becomes,
                       increasing the value of its associated NFT.
+- Fans can compete for a rare attribute for their avatar for eg, dhoni's digital bat as a accessory. This will gamify the user experience.
 - This could also be integrated with crictos, where the avatar can be the users own player and could inherit traits from a real world cricketer.
 
 ![image](https://user-images.githubusercontent.com/74852751/222494368-91e2e48d-19e5-4d4e-a18c-4ed8b0bb100c.png)
