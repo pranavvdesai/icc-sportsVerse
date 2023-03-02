@@ -116,22 +116,28 @@ const LeagueCard = () => {
                           <h5 className="text-white text-xl text-right">
                             Starting Date: 1/3/2023{" "}
                           </h5>
-                          <div className="flex justify-between items-end mt-8">
+                          
+                        </div>
+                        <div className="flex m-8">
                           {/* Buttons to edit project and view project */}
-                          <div className="flex  items-center justify-end text-gray-500">
-                            <h4 className="text-2xl text-white mx-5">
+                          <div className="   text-gray-500">
+                            <h4 className="text-2xl text-white ">
                               Rewards : Rs 10000/-
                             </h4>
                           </div>
-                          <button
+                          
+                        </div>
+                       <div className="m-8">
+                       <Link href="/fantasy">
+                       <button
                             className="hidden md:inline-flex bg-transparent text-white text-xl px-8 py-2 border border-white-500 rounded-xl
                             hover:bg-white hover:text-black
                             "
                           >
                             Play Now
                           </button>
-                        </div>
-                        </div>
+                          </Link>
+                       </div>
                           </h4>
                           <h5 className="text-white text-lg">
                             
@@ -186,6 +192,26 @@ const LeagueCard = () => {
                             Started on : 1/1/2023{" "}
                           </h5>
                         </div>
+                        <div className="flex  m-8">
+                          {/* Buttons to edit project and view project */}
+                          <div className="flex  text-gray-500">
+                            <h4 className="text-2xl text-white ">
+                              Rewards : Rs 10000/-
+                            </h4>
+                          </div>
+                          
+                        </div>
+                        <div className="m-8">
+                       <Link href="/fantasy">
+                       <button
+                            className="hidden md:inline-flex bg-transparent text-white text-xl px-8 py-2 border border-white-500 rounded-xl
+                            hover:bg-white hover:text-black
+                            "
+                          >
+                            Play Now
+                          </button>
+                          </Link>
+                       </div>
                           </h4>
                           <h5 className="text-white text-lg">
                             
@@ -193,21 +219,7 @@ const LeagueCard = () => {
                               Trending
                             </span>
                           </h5>
-                          <div className="flex justify-between items-end mt-8">
-                          {/* Buttons to edit project and view project */}
-                          <div className="flex  items-center justify-end text-gray-500">
-                            <h4 className="text-2xl text-white mx-5">
-                              Rewards : Rs 10000/-
-                            </h4>
-                          </div>
-                          <button
-                            className="hidden md:inline-flex bg-transparent text-white text-xl px-8 py-2 border border-white-500 rounded-xl
-                            hover:bg-white hover:text-black
-                            "
-                          >
-                            Play Now
-                          </button>
-                        </div>
+                          
                         </div>
 
                        
@@ -255,6 +267,29 @@ const LeagueCard = () => {
                             Started on : 1/12/2022{" "}
                           </h5>
                         </div>
+                        <div className="m-8">
+                        <div className="flex ">
+                          {/* Buttons to edit project and view project */}
+                          <div className="flex   text-gray-500">
+                            <h4 className="text-2xl text-white ">
+                              Rewards : Rs 10000/-
+                            </h4>
+                          </div>
+                          
+                        </div>
+                      
+                       </div>
+                       <div className="m-8">
+                       <Link href="/fantasy">
+                       <button
+                            className="hidden md:inline-flex bg-transparent text-white text-xl px-8 py-2 border border-white-500 rounded-xl
+                            hover:bg-white hover:text-black
+                            "
+                          >
+                            Play Now
+                          </button>
+                          </Link>
+                       </div>
                           </h4>
                           <h5 className="text-white text-lg">
                             
@@ -262,21 +297,7 @@ const LeagueCard = () => {
                               Trending
                             </span>
                           </h5>
-                          <div className="flex justify-between items-end mt-8">
-                          {/* Buttons to edit project and view project */}
-                          <div className="flex  items-center justify-end text-gray-500">
-                            <h4 className="text-2xl text-white mx-5">
-                              Rewards : Rs 10000/-
-                            </h4>
-                          </div>
-                          <button
-                            className="hidden md:inline-flex bg-transparent text-white text-xl px-8 py-2 border border-white-500 rounded-xl
-                            hover:bg-white hover:text-black
-                            "
-                          >
-                            Play Now
-                          </button>
-                        </div>
+                         
                         </div>
 
                        
