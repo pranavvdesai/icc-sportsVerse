@@ -35,7 +35,7 @@ const fantasy = () => {
     const submitChanges = () => {
         if (cartItems.length > 0) {
             axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/me/participate-contest`, {
-                reduce_amount: 10,
+                reduce_amount: -10,
             },
                 {
                     headers: {
