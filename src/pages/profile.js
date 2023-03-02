@@ -156,21 +156,11 @@ export default function Profile() {
   async function onConnect() {
     await authArcana.init();
     const token = localStorage.getItem("token");
-    authArcana.getUser().then((res) => {
+    await authArcana.getUser().then((res) => {
       console.log("inside res");
       console.log(res);
       setUserInfo(res);
     });
-    axios
-      .get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/me/profile`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((res) => {
-        console.log(res.data);
-        setProfile(res.data);
-      });
     try {
       await axios
         .get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/me/get-avatar`, {
@@ -186,6 +176,7 @@ export default function Profile() {
           let updatedConfig = res.data;
           updatedConfig.shape = "rounded";
           setConfig(updatedConfig);
+          setProfile(res.data.profile)
         })
         .catch((err) => {
           console.log("inside axios error");
@@ -206,6 +197,7 @@ export default function Profile() {
                 let updatedConfig = res.data;
                 updatedConfig.shape = "rounded";
                 setConfig(updatedConfig);
+                setProfile(res.data.profile)
               });
           }
         });
@@ -216,17 +208,13 @@ export default function Profile() {
       }
     }
     setDomLoaded(true);
+    console.log(profile);
+    console.log(userInfo);
   }
 
-  console.log(profile);
-  console.log(userInfo);
   useEffect(() => {
-    provider.on("connect", onConnect);
-    return () => {
-      provider.removeListener("connect", onConnect);
-    };
-
-  }, [provider]);
+    onConnect();
+  }, []);
 
   return (
     <>
@@ -243,34 +231,14 @@ export default function Profile() {
           <div className="mt-20 text-custom-white">
             <div className="flex w-full mb-10">
               <div className=" w-[50%] relative mx-10">
-                {/* <Image
-            src="https://picsum.photos/600"
-            layout="fill"
-            objectFit="cover"
-            className="rounded-sm"
-            alt="profile"
-          /> */}
                 <div className="w-full h-full rounded overflow-hidden ">
-                  {/* <img
-              className="w-full"
-              src="https://picsum.photos/200"
-              alt="Sunset in the mountains"
-            /> */}
                   <div
                     className="flex mb-8"
                     style={{ backgroundColor: config.bgColor }}
                   >
                     <div className="relative h-96 w-[100%] ">
-                      {/* <Image
-                  src="https://media.giphy.com/media/10fS0TJxfFRDLW/giphy.gif"
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-md "
-                  alt="profile"
-                /> */}
                       <Avatar className=" h-full w-[60%] mx-auto" {...config} />
                     </div>
-                    {/* <div className={`w-[50%] h-96 bg-[${config.bgColor}]`}></div> */}
                   </div>
                   <Accordion title="What can i do with my avatar?" desc={acc} />
                   <Accordion title="How do i level up my avatar?" desc={acc2} />
@@ -293,8 +261,8 @@ export default function Profile() {
                 <h1 className="text-xl">
                   Wallet balance:{" "}
                   {profile.balance !== undefined &&
-                  profile.balance !== null &&
-                  profile.balance !== NaN ? (
+                    profile.balance !== null &&
+                    profile.balance !== NaN ? (
                     profile.balance
                   ) : (
                     <>

@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import QRCode from "react-qr-code";
 
-const MyTicket = ({ ticket }) => {
+const MyTicket = ({ ticket, sell, transfer }) => {
   // function to show only the particular selected ticket in the modal
 
   const [show, setShow] = React.useState(false);
@@ -80,6 +80,22 @@ const MyTicket = ({ ticket }) => {
       >
         View Ticket
       </button>
+      {/* Show Sell button if sell==true*/}
+      {sell && (
+        <button
+          className="bg-white text-black mx-5 font-semibold py-2 px-4 rounded-md mt-2 mb-1">
+          Sell
+        </button>
+      )}
+
+      {/* Show Transfer button if transfer==true*/}
+      {transfer && (
+        <button
+          className="bg-white text-black mx-5 font-semibold py-2 px-4 rounded-md mt-2 mb-1">
+          Transfer
+        </button>
+      )}
+
       {show && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 flex justify-center items-center">
           <div className="custom-gray w-3/4 h-3/4 rounded-xl relative">
