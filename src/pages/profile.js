@@ -17,9 +17,9 @@ const acc = `
                     </p>
                     <div class="grid grid-cols-3 gap-6 mt-4">
                       <div class="relative custom-gray shadow-lg rounded-lg  overflow-hidden">
-                        <div class=" h-full w-full absolute bottom-0 opacity-40">
+                        <div class=" h-full w-full absolute bottom-0 opacity-20">
                           <Image
-                            src="/england.jpg"
+                            src="/img1.jpg"
                             layout="fill"
                             objectFit="cover"
                             className="rounded-md"
@@ -32,12 +32,12 @@ const acc = `
                           </h3>
                         </div>
                         <div class="text-xs text-custom-gray p-2">
-                          Required avatar lvl: 97
+                          Required avatar lvl: 75
                         </div>
                       </div>
 
                       <div class="relative custom-gray shadow-lg rounded-lg  overflow-hidden">
-                        <div class=" h-full w-full absolute bottom-0 opacity-40">
+                        <div class=" h-full w-full absolute bottom-0 opacity-20">
                           <Image
                             src="/england.jpg"
                             layout="fill"
@@ -52,14 +52,14 @@ const acc = `
                           </h3>
                         </div>
                         <div class="text-xs text-custom-gray p-2">
-                          Required avatar lvl: 97
+                          Required avatar lvl: 50
                         </div>
                       </div>
 
                       <div class="relative custom-gray shadow-lg rounded-lg  overflow-hidden">
-                        <div class=" h-full w-full absolute bottom-0 opacity-40">
+                        <div class=" h-full w-full absolute bottom-0 opacity-10">
                           <Image
-                            src="/england.jpg"
+                            src="/crictoslogo2.jpg"
                             layout="fill"
                             objectFit="cover"
                             className="rounded-md"
@@ -72,14 +72,14 @@ const acc = `
                           </h3>
                         </div>
                         <div class="text-xs text-custom-gray p-2">
-                          Required avatar lvl: 97
+                          Required avatar lvl: 1
                         </div>
                       </div>
 
                       <div class="relative custom-gray shadow-lg rounded-lg  overflow-hidden">
-                        <div class=" h-full w-full absolute bottom-0 opacity-40">
+                        <div class=" h-full w-full absolute bottom-0 opacity-20">
                           <Image
-                            src="/england.jpg"
+                            src="/gorund3.png"
                             layout="fill"
                             objectFit="cover"
                             className="rounded-md"
@@ -92,14 +92,14 @@ const acc = `
                           </h3>
                         </div>
                         <div class="text-xs text-custom-gray p-2">
-                          Required avatar lvl: 97
+                          Required avatar lvl: 25
                         </div>
                       </div>
 
                       <div class="relative custom-gray shadow-lg rounded-lg  overflow-hidden">
-                        <div class=" h-full w-full absolute bottom-0 opacity-40">
+                        <div class=" h-full w-full absolute bottom-0 opacity-20">
                           <Image
-                            src="/england.jpg"
+                            src="/merch.png"
                             layout="fill"
                             objectFit="cover"
                             className="rounded-md"
@@ -117,9 +117,9 @@ const acc = `
                       </div>
 
                       <div class="relative custom-gray shadow-lg rounded-lg  overflow-hidden">
-                        <div class=" h-full w-full absolute bottom-0 opacity-40">
+                        <div class=" h-full w-full absolute bottom-0 opacity-20">
                           <Image
-                            src="/england.jpg"
+                            src="/t20wc.png"
                             layout="fill"
                             objectFit="cover"
                             className="rounded-md"
@@ -218,12 +218,13 @@ export default function Profile() {
 
   return (
     <>
-      {!domloaded && (<>
-        <div className="flex justify-center items-center h-screen">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-custom-white"></div>
-        </div>
-      </>)
-      }
+      {!domloaded && (
+        <>
+          <div className="flex justify-center items-center h-screen">
+            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-custom-white"></div>
+          </div>
+        </>
+      )}
       {domloaded && (
         <>
           <TopNav />
@@ -231,20 +232,57 @@ export default function Profile() {
             <div className="flex w-full mb-10">
               <div className=" w-[50%] relative mx-10">
                 <div className="w-full h-full rounded overflow-hidden ">
-                  <div className={`flex bg-[${config.bgColor}]`}>
+                  <div
+                    className="flex mb-8"
+                    style={{ backgroundColor: config.bgColor }}
+                  >
                     <div className="relative h-96 w-[100%] ">
                       <Avatar className=" h-full w-[60%] mx-auto" {...config} />
                     </div>
                   </div>
-
+                  <Accordion title="What can i do with my avatar?" desc={acc} />
+                  <Accordion title="How do i level up my avatar?" desc={acc2} />
+                </div>
+              </div>
+              <div className="w-[50%] mr-10">
+                <p className="text-custom-blue1 text-xl py-2">
+                  {userInfo?.address}
+                </p>
+                <div className="flex items-center justify-between">
+                  <h1 className="text-4xl font-Poppins py-2">
+                    {userInfo?.name}
+                  </h1>
+                  <div className="flex">
+                    <BsTwitter className="text-white text-2xl mr-3" />
+                    <AiFillLinkedin className="text-white text-2xl mr-3" />
+                    <BsInstagram className="text-white text-2xl" />
+                  </div>
+                </div>
+                <h1 className="text-xl">
+                  Wallet balance:{" "}
+                  {profile.balance !== undefined &&
+                    profile.balance !== null &&
+                    profile.balance !== NaN ? (
+                    profile.balance
+                  ) : (
+                    <>
+                      <div
+                        className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                        role="status"
+                      ></div>
+                    </>
+                  )}{" "}
+                  ICCTXN{" "}
+                </h1>
+                <div className="my-4 mt-6">
                   <div className="px-2 py-4 mt-4 custom-gray">
                     <div className="font-bold text-xl mb-2">Avatar lvl.</div>
                     <p className="text-[#9a9999] text-base pb-2">
                       As you progress through levels with your avatar, you will
-                      receive a distinctive accessory that becomes increasingly rare
-                      as you advance. The more rare your avatar's attributes are,
-                      the more rare your avatar becomes, increasing the value of its
-                      associated NFT.
+                      receive a distinctive accessory that becomes increasingly
+                      rare as you advance. The more rare your avatar's
+                      attributes are, the more rare your avatar becomes,
+                      increasing the value of its associated NFT.
                     </p>
                     <div className="flex align-middle items-center">
                       <div className="w-[90%]">
@@ -313,34 +351,6 @@ export default function Profile() {
                       <p className=" w-[10%] px-2">{profile.rarity}%</p>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div className="w-[50%] mr-10">
-                <p className="text-custom-blue1 text-xl py-2">
-                  {userInfo?.address}
-                </p>
-                <div className="flex items-center justify-between">
-                  <h1 className="text-4xl font-Poppins py-2">{userInfo?.name}</h1>
-                  <div className="flex">
-                    <BsTwitter className="text-white text-2xl mr-3" />
-                    <AiFillLinkedin className="text-white text-2xl mr-3" />
-                    <BsInstagram className="text-white text-2xl" />
-                  </div>
-                </div>
-                <h1 className="text-xl">Wallet balance: {
-
-                  profile.balance !== undefined && profile.balance !== null && profile.balance !== NaN ? profile.balance / 100 :
-                    <>
-                      <div
-                        className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
-                        role="status">
-
-                      </div>
-                    </>
-                } ICCTXN </h1>
-                <div className="my-4 mt-6">
-                  <Accordion title="What can i do with my avatar?" desc={acc} />
-                  <Accordion title="How do i level up my avatar?" desc={acc2} />
                 </div>
               </div>
             </div>
