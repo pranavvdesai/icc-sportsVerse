@@ -36,7 +36,6 @@ const events = () => {
               <div class="relative text-right px-5">
                 <a
                   class="inline-flex w-11 h-11 justify-center items-center bg-[#206fbf] hover:bg-[#10569c] text-pink-50 hover:text-white rounded-full transition duration-150"
-                  href="/events"
                 >
                   <AiOutlineArrowRight />
                 </a>
@@ -63,7 +62,6 @@ const events = () => {
               <div class="relative text-right px-5">
                 <a
                   class="inline-flex w-11 h-11 justify-center items-center bg-[#206fbf] hover:bg-[#10569c] text-pink-50 hover:text-white rounded-full transition duration-150"
-                  href="/events"
                 >
                   <AiOutlineArrowRight />
                 </a>
@@ -90,7 +88,6 @@ const events = () => {
               <div class="relative text-right px-5">
                 <a
                   class="inline-flex w-11 h-11 justify-center items-center bg-[#206fbf] hover:bg-[#10569c] text-pink-50 hover:text-white rounded-full transition duration-150"
-                  href="/events"
                 >
                   <AiOutlineArrowRight />
                 </a>
@@ -117,7 +114,6 @@ const events = () => {
             <div class="relative text-right px-5">
               <a
                 class="inline-flex w-11 h-11 justify-center items-center bg-[#206fbf] hover:bg-[#10569c] text-pink-50 hover:text-white rounded-full transition duration-150"
-                href="/events"
               >
                 <AiOutlineArrowRight />
               </a>

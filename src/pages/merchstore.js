@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import Image from 'next/image'
 import React, { useEffect } from 'react'
 import TopNav from '../components/TopNav'
@@ -45,6 +46,7 @@ const merchstore = () => {
                     merchandise.map((item) => {
                         return (
                             <MerchStoreCard
+                                key={item}
                                 walletBalance={walletBalance}
                                 item={item} />
                         )

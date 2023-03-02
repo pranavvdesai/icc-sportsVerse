@@ -280,7 +280,7 @@ export default function Profile() {
                     <p className="text-[#9a9999] text-base pb-2">
                       As you progress through levels with your avatar, you will
                       receive a distinctive accessory that becomes increasingly
-                      rare as you advance. The more rare your avatar's
+                      rare as you advance. The more rare your avatars
                       attributes are, the more rare your avatar becomes,
                       increasing the value of its associated NFT.
                     </p>
