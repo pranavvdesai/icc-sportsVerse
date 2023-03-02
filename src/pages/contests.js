@@ -16,14 +16,6 @@ const contests = () => {
         best cricket strategy game!
       </div>
       <div className=" mt-10 text-custom-white mx-10">
-        {/* {
-                    data.map((item) => {
-                        return (
-                            <ContestCard item={item} />
-                        )
-                    })
-                } */}
-        {/* <ContestCard /> */}
         <div className="grid grid-cols-3 gap-4">
           <Link href="/leagues">
             <div className="relative custom-gray rounded-md border border-slate-500 cursor-pointer">
