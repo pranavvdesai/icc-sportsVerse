@@ -59,9 +59,8 @@ export default function Wallet() {
   console.log(profile);
   console.log(transactions);
   function addToWallet() {
-    window.location.href = `${
-      process.env.NEXT_PUBLIC_BACKEND_URL
-    }/razorpay/convert?amount=${price_now * 100}&user=${profile.user}`;
+    window.location.href = `${process.env.NEXT_PUBLIC_BACKEND_URL
+      }/razorpay/convert?amount=${price_now * 100}&user=${profile.user}`;
     console.log("add to wallet");
   }
   return (
@@ -83,14 +82,18 @@ export default function Wallet() {
               <BsBoxArrowUpRight className="ml-1 text-custom-blue1 text-sm" />
             </div>
             <div className="text-3xl mb-4 mt-4">
-              {profile.balance}{" "}
+              {
+                (profile.balance) / 100
+              }{" "}
               <span className="text-custom-blue1">ICC Tokens</span>
             </div>
             <hr className="my-2 custom-gray"></hr>
             <div className="flex flex-col mb-6">
               <div className="flex text-white justify-between">
                 <p>Withdrawable balance</p>
-                <h1>{profile.balance}</h1>
+                <h1>{
+                  (profile.balance) / 100
+                }</h1>
               </div>
               <div className="flex text-[#9a9999] text-base justify-between">
                 <p>Rewards balance</p>
@@ -110,7 +113,7 @@ export default function Wallet() {
             </div>
           </div>
           <div className="w-[50%] ml-10 mt-4 flex flex-col ">
-            <div
+            <button
               className="bg-[#206FBF] flex items-center p-4 mb-4 cursor-pointer"
               onClick={handleShow}
             >
@@ -118,7 +121,7 @@ export default function Wallet() {
               <p className="text-custom-white text-xl my-2 cursor-pointer">
                 Add ICC-TX to your wallet
               </p>
-            </div>
+            </button>
             <div className="custom-gray flex items-center p-4">
               <BsBank2 className="text-3xl text-custom-white mx-3 my-2" />
               <p className="text-custom-white text-xl my-2">
@@ -170,13 +173,18 @@ export default function Wallet() {
                       </p>
                     </td>
                     <td className="border-b border-slate-400 py-2 px-4">
-                      {transaction.timestamp}
+                      {/* Convert the timestamp to date and time */}
+                      {
+                        transaction.timestamp
+                      }
                     </td>
                     <td className="border-b px-4 py-2 border-slate-400">
                       {transaction.buyer}
                     </td>
                     <td className="border-b px-4 py-2 border-slate-400">
-                      {transaction.amount} ICC-TX
+                      {
+                        (transaction.amount) / 100
+                      } ICC-TX
                     </td>
                     <td className="border-b px-4 py-2 border-slate-400">
                       {transaction.seller}
