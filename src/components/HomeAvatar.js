@@ -3,7 +3,6 @@ import React from "react";
 import Image from "next/image";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import Avatar, { genConfig } from "react-nice-avatar";
-import { Link } from "react-router-dom";
 
 export default function HomeAvatar() {
 const avatar = {
