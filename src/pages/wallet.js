@@ -20,7 +20,14 @@ export default function Wallet() {
   const [profile, setProfile] = React.useState([]);
   const [userInfo, setUserInfo] = useState({});
   const [transactions, setTransactions] = useState([]);
-
+  const [show, setShow] = React.useState(false);
+  const [price_now, setPrice] = useState(0);
+  const handleShow = () => {
+    setShow(true);
+  };
+  const handleClose = () => {
+    setShow(false);
+  };
   useEffect(() => {
     authArcana.getUser().then((res) => {
       console.log("inside res");
@@ -51,6 +58,12 @@ export default function Wallet() {
   }, []);
   console.log(profile);
   console.log(transactions);
+  function addToWallet() {
+    window.location.href = `${
+      process.env.NEXT_PUBLIC_BACKEND_URL
+    }/razorpay/convert?amount=${price_now * 100}&user=${profile.userId}`;
+    console.log("add to wallet");
+  }
   return (
     <>
       <TopNav />
@@ -97,9 +110,12 @@ export default function Wallet() {
             </div>
           </div>
           <div className="w-[50%] ml-10 mt-4 flex flex-col ">
-            <div className="bg-[#206FBF] flex items-center p-4 mb-4">
+            <div
+              className="bg-[#206FBF] flex items-center p-4 mb-4 cursor-pointer"
+              onClick={handleShow}
+            >
               <AiFillPlusCircle className="text-3xl text-custom-white mx-3 my-2" />
-              <p className="text-custom-white text-xl my-2">
+              <p className="text-custom-white text-xl my-2 cursor-pointer">
                 Add ICC-TX to your wallet
               </p>
             </div>
@@ -179,6 +195,49 @@ export default function Wallet() {
             title="What can i do with these tokens, how do i get additional tokens"
             desc={acc2}
           />
+          {show && (
+            <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 flex justify-center items-center">
+              <div className="custom-gray w-[40%] h-[40%] rounded-xl relative">
+                <div className="flex  justify-end right-0">
+                  <button
+                    onClick={handleClose}
+                    className="bg-gray-500 rounded-full p-2 m-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div className=" mx-10 justify-center align-middle">
+                  <h1 className="font-Poppins text-2xl text-custom-white">Enter Amount</h1>
+                  <input
+                    type="number"
+                    className="w-full h-12 rounded-md mt-4 text-black p-2"
+                    placeholder="Enter Amount"
+                    value={price_now}
+                    onChange={(e) => setPrice(e.target.value)}
+                  />
+                  <button
+                    className="bg-[#206FBF] w-full h-12 rounded-md mt-4"
+                    onClick={addToWallet}
+                  >
+                    Add to wallet
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </>
