@@ -61,7 +61,7 @@ export default function Wallet() {
   function addToWallet() {
     window.location.href = `${
       process.env.NEXT_PUBLIC_BACKEND_URL
-    }/razorpay/convert?amount=${price_now * 100}&user=${profile.userId}`;
+    }/razorpay/convert?amount=${price_now * 100}&user=${profile.user}`;
     console.log("add to wallet");
   }
   return (
@@ -173,13 +173,13 @@ export default function Wallet() {
                       {transaction.timestamp}
                     </td>
                     <td className="border-b px-4 py-2 border-slate-400">
-                      {transaction.transaction_hash}
+                      {transaction.buyer}
                     </td>
                     <td className="border-b px-4 py-2 border-slate-400">
                       {transaction.amount} ICC-TX
                     </td>
                     <td className="border-b px-4 py-2 border-slate-400">
-                      {transaction.transaction_hash}
+                      {transaction.seller}
                     </td>
                   </tr>
                 ))}
