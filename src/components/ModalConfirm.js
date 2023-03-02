@@ -13,7 +13,7 @@ const ModalConfirm = ({
         axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/razorpay/buy/`, {
             amount: amount,
             note: "merchandise",
-            seller: 2
+            seller: 1
         },
             {
                 headers: {
