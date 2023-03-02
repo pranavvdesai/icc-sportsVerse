@@ -216,12 +216,12 @@ export default function home() {
           Explore ICC
         </h1>
         <div className="grid grid-cols-6 gap-4 mt-4">
-          <Exploreicc />
-          <Exploreicc />
-          <Exploreicc />
-          <Exploreicc />
-          <Exploreicc />
-          <Exploreicc />
+          <Exploreicc text="ICC.TV" src="/icctvlogo2.jpg" />
+          <Exploreicc text="CRICTOS" src="/crictoslogo2.jpg"/>
+          <Exploreicc text="CRIIIO" src="/criiio.png"/>
+          <Exploreicc text="ICC AWARDS" src="/ICCAwards.png" />
+          <Exploreicc text="Hall of Fame" src="/HallofFame.png" />
+          <Exploreicc text="ICC APP" src="/ICCApp.png" />
         </div>
 
         {/* explore events */}
